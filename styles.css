@@ -285,3 +285,19 @@
 .qos-project .project-image img{max-width:100%;height:auto}
 
 .case-table-scroll{max-width:100%;overflow-x:auto;margin:30px 0;border:1px solid var(--line);border-radius:8px}.case-table{width:100%;min-width:700px;border-collapse:collapse;font-size:12px;line-height:1.6;text-align:left}.case-table caption{text-align:left;padding:18px;color:var(--muted);font-size:11px}.case-table th,.case-table td{padding:15px;border-top:1px solid var(--line);vertical-align:top}.case-table thead th{background:var(--ink);color:var(--paper);font-weight:400}.case-table tbody th{font-weight:500;min-width:125px}.case-copy{min-width:0}
+
+/* Visual evidence, original artefacts and research traceability. */
+.case-gallery{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;margin-top:12px}
+.case-gallery.single{grid-template-columns:minmax(0,1fr)}
+.case-gallery figure{margin:0;min-width:0}
+.case-gallery .zoom{width:100%;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.case-gallery img{display:block;width:100%;height:auto}
+.case-gallery figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;font-size:12px;line-height:1.65;color:var(--muted);margin-top:12px}
+.source-download{text-decoration:underline;text-underline-offset:4px;white-space:nowrap}
+.case-evidence{grid-column:1/-1;min-width:0;border:1px solid var(--line);border-radius:8px;padding:20px 24px}
+.case-evidence summary{cursor:pointer;font-size:15px;line-height:1.5;padding:5px 0}
+.case-evidence[open] summary{margin-bottom:24px}
+.case-evidence summary:focus-visible,.source-download:focus-visible{outline:2px solid var(--ink);outline-offset:5px}
+.trace-table{min-width:900px}
+.trace-table th,.trace-table td{width:33.333%;padding:18px;line-height:1.7}
+@media(max-width:680px){.case-gallery{grid-template-columns:1fr;gap:30px}.case-gallery figcaption{font-size:11px}.case-evidence{padding:16px}.case-evidence summary{font-size:13px}}

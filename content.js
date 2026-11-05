@@ -11,61 +11,78 @@ window.PORTFOLIO.qos={
   "status": "MVP ideation and wireframes · Impact not yet validated",
   "eyebrow": "04 / Internal tools · Network quality",
   "intro": [
-    "Helping Carrier teams understand network incidents before customer reports become the first warning.",
-    "I translated research findings and a product benchmark into an incident-first MVP: Slack for the initial signal, a dashboard for prioritization, and focused detail views for investigation and recovery tracking."
+    "Moving Holafly’s network-quality monitoring from customer-reported problems toward earlier incident detection and investigation.",
+    "Carrier teams had technical data, but turning it into an operational decision required manual interpretation. I brought together research findings, a four-product benchmark, user flows, information architecture and wireframe explorations to define an incident-first MVP: understand what is happening, where it matters, and what evidence supports the response."
   ],
   "overview": [
     [
-      "The problem",
+      "Context & problem",
       0
     ],
     [
       "Research & decisions",
-      1
+      2
     ],
     [
-      "The proposed experience",
-      4
+      "Flow & architecture",
+      5
+    ],
+    [
+      "Wireframes & scenarios",
+      8
     ],
     [
       "Scope & validation",
-      7
+      14
+    ],
+    [
+      "Source material",
+      16
     ]
   ],
   "sections": [
     {
-      "label": "The starting point",
-      "heading": "The first signal should not\nbe a customer complaint.",
-      "html": "<p>Network incidents were often identified after their impact had escalated. By the time Carrier stakeholders became aware of a problem, Support was already receiving customer reports.</p><p>Holafly had network-quality data, but its dashboard presented aggregated technical metrics that required manual filtering and interpretation. Teams could not easily see when an incident was happening, where it was occurring, or which destinations needed immediate attention.</p>",
-      "note": "DESIGN OPPORTUNITY · Use near-real-time nSpire signals to support earlier detection, prioritization and recovery tracking."
+      "label": "Context and brief",
+      "heading": "Technical data existed.\nAn early operational signal did not.",
+      "html": "<p>Holafly’s Carrier stakeholders needed to understand network quality across destinations and network partners. Incidents were often identified only after the impact had escalated: by the time the Carrier team became aware of a problem, customer reports were already reaching Support.</p><p>The existing dashboard provided aggregated technical metrics and filters. It could help someone inspect performance, but it required them to decide what to filter, interpret the readings and work out whether a change represented an incident. Customer contact volume had become an informal detection mechanism.</p><p>The opportunity was to use near-real-time signals from the nSpire feed to surface potential incidents earlier, with Slack as the entry point and a dashboard for prioritization, investigation and recovery tracking.</p>",
+      "gallery": [
+        {
+          "image": "qos/originals/ccd8f18315e71263b2964ec83ac3c5e8b44b4ed3.png",
+          "alt": "Previous Holafly network-quality dashboard · Aggregated metrics and filters",
+          "caption": "Previous Holafly network-quality dashboard · Aggregated metrics and filters",
+          "width": 1920,
+          "height": 866
+        }
+      ],
+      "note": "PROJECT CONTEXT · Internal operational tooling for Carrier stakeholders. Support complaints, NPS and refunds described the consequences of late detection; the supplied work does not quantify a baseline."
     },
     {
-      "label": "Research into decisions",
-      "heading": "From more metrics\nto clearer decisions.",
-      "html": "<p>The research pointed to a change in the unit of information: organize the experience around incidents, then reveal the evidence needed at each stage of investigation.</p>",
+      "label": "Framing the problem",
+      "heading": "What is happening?\nWhere should we look first?",
+      "html": "<p>The problem was the effort required to turn available data into an explanation. The dashboard did not make four questions clear: is an incident happening, how severe is it, where is it occurring, and how many travellers may be affected?</p><p>Without that context, teams could struggle to distinguish a widespread outage from localized degradation or prioritize destinations that required immediate attention. Late detection also delayed coordination with network partners while Support handled the consequences.</p><p>I framed the experience around the decisions made during an incident. The first view needs to establish urgency and scope; the next layer needs to explain the trigger; deeper evidence needs to remain available without dominating the first impression.</p>",
       "steps": [
         [
-          "Start where teams already look",
-          "Slack is the main entry point during an incident. Use it for a summary and a direct path into the dashboard."
+          "Recognize",
+          "Identify the incident, severity, destination and freshness of the signal."
         ],
         [
-          "Put urgency and location first",
-          "Lead with severity, destination and incident status, while preserving operator, technology and timeframe."
+          "Prioritize",
+          "Compare active incidents and destinations requiring attention."
         ],
         [
-          "Separate evidence from impact",
-          "Monitored devices describe technical evidence. Estimating affected travellers requires internal business data."
+          "Investigate",
+          "Understand impact, triggering metrics, network scope and trends."
         ],
         [
-          "Reveal detail progressively",
-          "Structure investigation around impact, technical diagnosis, trends and history."
+          "Track",
+          "See whether the incident remains active and what recovery evidence exists."
         ]
       ]
     },
     {
       "label": "Product benchmark",
-      "heading": "Borrow patterns.\nKeep the operational context.",
-      "html": "<p>I compared PagerDuty, ThousandEyes, Datadog and incident.io across detection, incident lists, geographic context, prioritization, Slack integration, history, operational actions and customer impact.</p><div class=\"case-table-scroll\" role=\"region\" aria-label=\"Product benchmark comparison; scroll horizontally on smaller screens\" tabindex=\"0\"><table class=\"case-table\"><caption>Comparative benchmark documented during MVP ideation</caption><thead><tr><th scope=\"col\">Areas</th><th scope=\"col\">PagerDuty</th><th scope=\"col\">ThousandEyes</th><th scope=\"col\">Datadog</th><th scope=\"col\">incident.io</th></tr></thead><tbody><tr><th scope=\"row\">Primary purpose</th><td>Coordinate incident response</td><td>Detect and diagnose network issues</td><td>Monitor systems and technical metrics</td><td>Manage the incident lifecycle</td></tr><tr><th scope=\"row\">Technical detection</th><td>Medium</td><td>Very high</td><td>Very high</td><td>Low; relies on integrations</td></tr><tr><th scope=\"row\">Incident list</th><td>Very strong</td><td>Secondary</td><td>Strong</td><td>Strong</td></tr><tr><th scope=\"row\">Technical incident detail</th><td>Medium</td><td>Very strong</td><td>Very strong</td><td>Medium</td></tr><tr><th scope=\"row\">Geographic context</th><td>Low</td><td>Very strong</td><td>Configurable</td><td>Low</td></tr><tr><th scope=\"row\">Severity and prioritization</th><td>Very strong</td><td>Strong</td><td>Strong</td><td>Strong</td></tr><tr><th scope=\"row\">Slack integration</th><td>Very strong</td><td>Medium</td><td>Strong</td><td>Very strong</td></tr><tr><th scope=\"row\">Timeline and history</th><td>Strong</td><td>Technically focused</td><td>Strong</td><td>Very strong</td></tr><tr><th scope=\"row\">Operational actions</th><td>Very strong</td><td>Limited</td><td>Configurable</td><td>Very strong</td></tr><tr><th scope=\"row\">Customer impact</th><td>Requires integrations</td><td>Based on affected tests or devices</td><td>Requires integrations</td><td>Requires integrations</td></tr><tr><th scope=\"row\">Best reference for Holafly</th><td>Incident list, statuses and ownership</td><td>Network diagnosis and top destinations</td><td>Metric-versus-threshold visualization</td><td>Slack workflow, timeline and resolution</td></tr></tbody></table></div>",
+      "heading": "Four products.\nDifferent parts of the same problem.",
+      "html": "<p>I compared PagerDuty, ThousandEyes, Datadog and incident.io to examine how incident coordination, network diagnosis and technical monitoring are made understandable. The benchmark covered nine criteria: detection, incident lists, technical detail, geographic context, severity, Slack integration, timeline, operational actions and customer impact.</p><p>PagerDuty provided references for incident lists, ownership and response context. ThousandEyes made network and geographic diagnosis visible. Datadog connected technical evidence with metrics and thresholds. incident.io showed how Slack, updates and history can support an incident lifecycle.</p><p>The design question was which patterns would help Holafly’s Carrier team, given its own signals and data limitations. An existing product’s ability to show customer impact, for example, did not mean nSpire could provide that impact on its own.</p><div class=\"case-table-scroll\" role=\"region\" aria-label=\"Product benchmark comparison; scroll horizontally on smaller screens\" tabindex=\"0\"><table class=\"case-table\"><caption>Comparative benchmark documented during MVP ideation</caption><thead><tr><th scope=\"col\">Areas</th><th scope=\"col\">PagerDuty</th><th scope=\"col\">ThousandEyes</th><th scope=\"col\">Datadog</th><th scope=\"col\">incident.io</th></tr></thead><tbody><tr><th scope=\"row\">Primary purpose</th><td>Coordinate incident response</td><td>Detect and diagnose network issues</td><td>Monitor systems and technical metrics</td><td>Manage the incident lifecycle</td></tr><tr><th scope=\"row\">Technical detection</th><td>Medium</td><td>Very high</td><td>Very high</td><td>Low; relies on integrations</td></tr><tr><th scope=\"row\">Incident list</th><td>Very strong</td><td>Secondary</td><td>Strong</td><td>Strong</td></tr><tr><th scope=\"row\">Technical incident detail</th><td>Medium</td><td>Very strong</td><td>Very strong</td><td>Medium</td></tr><tr><th scope=\"row\">Geographic context</th><td>Low</td><td>Very strong</td><td>Configurable</td><td>Low</td></tr><tr><th scope=\"row\">Severity and prioritization</th><td>Very strong</td><td>Strong</td><td>Strong</td><td>Strong</td></tr><tr><th scope=\"row\">Slack integration</th><td>Very strong</td><td>Medium</td><td>Strong</td><td>Very strong</td></tr><tr><th scope=\"row\">Timeline and history</th><td>Strong</td><td>Technically focused</td><td>Strong</td><td>Very strong</td></tr><tr><th scope=\"row\">Operational actions</th><td>Very strong</td><td>Limited</td><td>Configurable</td><td>Very strong</td></tr><tr><th scope=\"row\">Customer impact</th><td>Requires integrations</td><td>Based on affected tests or devices</td><td>Requires integrations</td><td>Requires integrations</td></tr><tr><th scope=\"row\">Best reference for Holafly</th><td>Incident list, statuses and ownership</td><td>Network diagnosis and top destinations</td><td>Metric-versus-threshold visualization</td><td>Slack workflow, timeline and resolution</td></tr></tbody></table></div>",
       "steps": [
         [
           "Incident coordination",
@@ -76,81 +93,408 @@ window.PORTFOLIO.qos={
           "ThousandEyes and Datadog informed the review of network diagnosis, geographic context and metric-versus-threshold evidence."
         ]
       ],
-      "note": "RESEARCH SYNTHESIS · These are design references documented in the benchmark, not claims of feature parity or integrations built for the MVP."
+      "note": "BENCHMARK REFERENCES · These are third-party product examples collected in the supplied research board. They are distinct from the Holafly proposal. The takeaways follow the written research summary.",
+      "evidence": [
+        {
+          "image": "qos/originals/8753655d4f9c32d6028efa110fed02a3de47cc60.png",
+          "alt": "PagerDuty reference · Incident list and response context",
+          "caption": "PagerDuty reference · Incident list and response context",
+          "width": 1024,
+          "height": 822
+        },
+        {
+          "image": "qos/originals/593e1b755b5d2063854da71441d408ca13a27290.png",
+          "alt": "PagerDuty reference · Incident detail and activity",
+          "caption": "PagerDuty reference · Incident detail and activity",
+          "width": 1024,
+          "height": 604
+        },
+        {
+          "image": "qos/originals/6651d00b74970ecfbc41e8e04c648372ce1034e5.png",
+          "alt": "PagerDuty reference · Severity, status and ownership",
+          "caption": "PagerDuty reference · Severity, status and ownership",
+          "width": 1920,
+          "height": 976
+        },
+        {
+          "image": "qos/originals/98e3787240762fc9ac6bf4e999c18526fa1e4e53.png",
+          "alt": "PagerDuty reference · Incident evidence and response actions",
+          "caption": "PagerDuty reference · Incident evidence and response actions",
+          "width": 1572,
+          "height": 996
+        },
+        {
+          "image": "qos/originals/0a56a40a5806228512139abed2d5119dff341d8b.png",
+          "alt": "PagerDuty reference · Operational console and response workflow",
+          "caption": "PagerDuty reference · Operational console and response workflow",
+          "width": 1920,
+          "height": 1437
+        },
+        {
+          "image": "qos/originals/dd940fa5a0739e23cc55402891fbe3e7d0fa0dfd.png",
+          "alt": "ThousandEyes reference · Outages over time and geographic diagnosis",
+          "caption": "ThousandEyes reference · Outages over time and geographic diagnosis",
+          "width": 800,
+          "height": 450
+        },
+        {
+          "image": "qos/originals/956d35109cb6556524cbb1277af9c72af163c44c.png",
+          "alt": "ThousandEyes reference · Global outage map and incident context",
+          "caption": "ThousandEyes reference · Global outage map and incident context",
+          "width": 940,
+          "height": 406
+        },
+        {
+          "image": "qos/originals/1d2e8d2a67d1240588e035f48a79e0fd11001297.png",
+          "alt": "ThousandEyes reference · Annotated map, timeline and filters",
+          "caption": "ThousandEyes reference · Annotated map, timeline and filters",
+          "width": 900,
+          "height": 480
+        },
+        {
+          "image": "qos/originals/2664af28f6a4afeddfffbc08e8336dc82736989c.png",
+          "alt": "Datadog reference · Incident overview and prioritization",
+          "caption": "Datadog reference · Incident overview and prioritization",
+          "width": 4096,
+          "height": 2304
+        },
+        {
+          "image": "qos/originals/e0b6ba968450bedb2472566ebc61d8f034d5392b.png",
+          "alt": "Datadog reference · Incident detail and technical evidence",
+          "caption": "Datadog reference · Incident detail and technical evidence",
+          "width": 3106,
+          "height": 1696
+        },
+        {
+          "image": "qos/originals/9d52f93b616f279f2ddcdb0a758e13ce31e42372.png",
+          "alt": "Datadog reference · Metrics and threshold context",
+          "caption": "Datadog reference · Metrics and threshold context",
+          "width": 3840,
+          "height": 1950
+        },
+        {
+          "image": "qos/originals/9c2a4a59a69cc6a0bae7c370c39e71c266ba553d.png",
+          "alt": "Datadog reference · Incident analytics",
+          "caption": "Datadog reference · Incident analytics",
+          "width": 3564,
+          "height": 2100
+        },
+        {
+          "image": "qos/originals/73fd5a67379827a557fb6d6a623970cda27c5431.png",
+          "alt": "incident.io reference · Incident list and lifecycle",
+          "caption": "incident.io reference · Incident list and lifecycle",
+          "width": 2954,
+          "height": 2090
+        },
+        {
+          "image": "qos/originals/45726499873ba6b23f05d60daaecffaef62a445c.png",
+          "alt": "incident.io reference · Slack as an operational entry point",
+          "caption": "incident.io reference · Slack as an operational entry point",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "image": "qos/originals/05a004410588bdcb77a1862e9728129a19f3aaf9.png",
+          "alt": "incident.io reference · Incident workflow and status",
+          "caption": "incident.io reference · Incident workflow and status",
+          "width": 1500,
+          "height": 824
+        },
+        {
+          "image": "qos/originals/b5d082779f380c84561e6bbef8db366d5c3b2d7d.png",
+          "alt": "incident.io reference · Slack timeline and updates",
+          "caption": "incident.io reference · Slack timeline and updates",
+          "width": 2000,
+          "height": 1099
+        },
+        {
+          "image": "qos/originals/19d239b3a0dc32653a753f95e4878a72b7a0c302.png",
+          "alt": "Slack alert reference · Annotated alert anatomy and evidence",
+          "caption": "Slack alert reference · Annotated alert anatomy and evidence",
+          "width": 2388,
+          "height": 1821
+        },
+        {
+          "image": "qos/originals/ea6d6b264539fa8a50407bfa63665083f90fe778.png",
+          "alt": "PagerDuty Slack reference · Severity, assignee and response actions",
+          "caption": "PagerDuty Slack reference · Severity, assignee and response actions",
+          "width": 1462,
+          "height": 618
+        },
+        {
+          "image": "qos/originals/865971a358d479f6f22e394951db083be68a5de3.png",
+          "alt": "Slack integration reference · Alert-to-incident workflow",
+          "caption": "Slack integration reference · Alert-to-incident workflow",
+          "width": 1172,
+          "height": 813
+        }
+      ],
+      "evidenceTitle": "Explore all 19 benchmark and Slack references"
     },
     {
-      "label": "Severity and scope",
-      "heading": "A useful first release\nneeds a clear boundary.",
-      "html": "<p>P0 and P2 had usable detection signals. P1 described a meaningful service condition, but the live nSpire feed needed validation before it could support that category.</p>",
+      "label": "Findings into decisions",
+      "heading": "Make the reasoning\ntraceable.",
+      "html": "<p>The synthesis records eleven findings, the design decision attached to each one, and the action or dependency needed to make it concrete. Keeping these together makes it possible to review both the interface direction and the product decisions still unresolved.</p><p>For example, knowing that Slack is the main entry point leads to a concise alert linked to a specific incident. Knowing that the feed measures devices leads to a separate traveller-impact estimate, with an explicit dependency on internal data.</p><div class=\"case-table-scroll\" role=\"region\" aria-label=\"Findings, design decisions and dependencies; scroll horizontally on smaller screens\" tabindex=\"0\"><table class=\"case-table trace-table\"><caption>Eleven findings translated into design decisions and implementation dependencies</caption><thead><tr><th scope=\"col\">Finding</th><th scope=\"col\">Design decision</th><th scope=\"col\">Action or dependency</th></tr></thead><tbody><tr><th scope=\"row\">Slack is the main entry point during an incident.</th><td>Treat Slack as the incident summary and the dashboard as the investigation layer.</td><td>Design P0 and P2 alert templates with severity, destination, impact, freshness and a link to the incident detail.</td></tr><tr><th scope=\"row\">The current dashboard shows metrics but does not explain what is happening.</th><td>Organize the experience around incidents rather than aggregated metrics.</td><td>Create an incident list and an incident detail view.</td></tr><tr><th scope=\"row\">Stakeholders need to know urgency and location first.</th><td>Prioritize severity and destination in the information hierarchy.</td><td>Add severity, destination and status filters.</td></tr><tr><th scope=\"row\">Users consider multiple data points important at different investigation stages.</th><td>Use progressive disclosure instead of showing everything at once.</td><td>Structure the detail as Impact → Technical diagnosis → Trend → History.</td></tr><tr><th scope=\"row\">Localized incidents are difficult to identify in the current dashboard.</th><td>Each incident must preserve its specific context.</td><td>Store and display country, operator, cellular technology, timeframe and triggering metric.</td></tr><tr><th scope=\"row\">The team needs to prioritize commercially relevant markets.</th><td>Include a Top destinations section in the incident list.</td><td>Product must define whether ranking is based on active travellers, business relevance, severity or incident volume.</td></tr><tr><th scope=\"row\">nSpire provides technical measurements, but not complete customer impact.</th><td>Separate technical evidence from business impact.</td><td>Use monitored devices as technical evidence and connect internal data to estimate affected travellers.</td></tr><tr><th scope=\"row\">P0 and P2 have usable detection signals; P1 does not.</th><td>Limit the first release to P0 and P2.</td><td>Validate the live nSpire feed before introducing P1.</td></tr><tr><th scope=\"row\">A threshold alone may be based on insufficient historical data.</th><td>Show confidence as supporting context for P2.</td><td>Calculate confidence from OpenSignal sample volume and clarify when evidence is limited.</td></tr><tr><th scope=\"row\">Users need to know whether the problem is still happening.</th><td>Include incident status, freshness and recovery history.</td><td>Define the recovery rule and the number of healthy measurement cycles required.</td></tr><tr><th scope=\"row\">Operational actions and ownership are not yet defined.</th><td>Keep the MVP focused on detection and investigation.</td><td>Product and Operations must define actions, permissions, owners and escalation rules before designing execution features.</td></tr></tbody></table></div>",
+      "note": "SOURCE BOUNDARY · The supplied material documents findings and a benchmark, but does not establish interview counts, participant profiles or a completed usability test. Those details are not inferred here."
+    },
+    {
+      "label": "Severity and detection",
+      "heading": "An outage, an unusable service,\nand a threshold breach need different evidence.",
+      "html": "<p>The taxonomy distinguishes three conditions. P0 asks whether the network is effectively down for a country. P1 asks whether the network is technically available but practically unusable. P2 asks whether that country has crossed its own performance threshold.</p><p>Those meanings are different from arbitrary priority labels. A P2 threshold is relative to a country’s expected performance, while an outage is an absolute availability problem. The evidence and explanation in the detail view therefore need to change with the condition.</p><p>The findings identify usable detection signals for P0 and P2. P1 remained a meaningful scenario to explore, but introducing it into the first release depended on validation of the live nSpire feed.</p>",
+      "gallery": [
+        {
+          "image": "qos/originals/508bebc44b0bd2e60e3c95623af9f54c5efb8f41.png",
+          "alt": "Original incident taxonomy · P0 outage, P1 severe degradation, P2 country threshold",
+          "caption": "Original incident taxonomy · P0 outage, P1 severe degradation, P2 country threshold",
+          "width": 657,
+          "height": 128
+        }
+      ],
       "steps": [
         [
-          "P0 · Service down",
-          "Surface network outages with destination and technical evidence."
+          "P0 · Outage",
+          "Use availability and out-of-service evidence to explain an interruption."
         ],
         [
-          "P2 · Threshold breached",
-          "Surface country-specific performance degradation, with confidence as supporting context."
+          "P2 · Country threshold",
+          "Show the current performance metric, configured threshold and strength of the supporting baseline."
         ],
         [
-          "P1 · Deferred",
-          "The service is available but practically unusable. Detection needs further feed validation."
-        ],
-        [
-          "Operational actions · Deferred",
-          "Ownership, permissions, escalation and execution require Product and Operations decisions."
+          "P1 · Severe degradation",
+          "Keep the exploration visible, while separating it from the proposed first-release scope."
         ]
       ]
     },
     {
-      "label": "Prioritization",
-      "heading": "See what needs attention.\nThen decide where to look.",
-      "html": "<p>The incident-list wireframe brings active incidents, severity and potentially affected travellers into one overview. Destination summaries help teams identify relevant markets before moving into the incident table.</p><p>Search and filters for severity, destination and status support a focused investigation. The ranking logic for top destinations remains a product decision: traveller volume, commercial relevance, severity and incident count can lead to different priorities.</p>",
-      "image": "qos-overview.png",
-      "imageAlt": "Holafly QoS incident-list wireframe with summary cards, destination summaries, filters and an incident table.",
-      "caption": "Incident list · Original MVP wireframe",
-      "note": "ILLUSTRATIVE DATA · All counts, percentages, names and destinations shown in the wireframes are design examples, not measured outcomes."
+      "label": "User flow",
+      "heading": "Two entry points.\nOne incident context.",
+      "html": "<p>The user flow supports both reactive investigation from an alert and a direct visit to the dashboard. From Slack, the person reviews the alert and opens the linked incident. From the dashboard, they review the incident list and destinations before selecting an incident.</p><p>Both paths converge on the same incident summary and technical diagnosis. The flow then branches according to status: an active incident requires continued monitoring; a recovered or resolved incident calls for reviewing the recovery record.</p><p>Returning to the list supports comparison and the next investigation. A Slack link must therefore preserve the incident’s specific context rather than open a generic dashboard where the user has to reconstruct the event.</p>",
+      "gallery": [
+        {
+          "image": "qos/renders/qos-user-flow.svg",
+          "alt": "Original user flow showing dashboard and Slack entry points, incident review, active or recovered status, monitoring and return to the incident list.",
+          "caption": "User flow · Original diagram from the supplied design",
+          "width": 2602,
+          "height": 3182
+        }
+      ]
     },
     {
-      "label": "Investigation",
-      "heading": "Keep each incident\nin its own context.",
-      "html": "<p>Opening an incident preserves its country, operator, cellular technology, timeframe and triggering metric. The detail hierarchy moves from impact to technical diagnosis, then trends and history.</p><p>The proposal distinguishes measured network signals from estimated traveller impact. When business data is unavailable, the interface needs to make that gap clear instead of presenting device measurements as a customer count.</p>"
+      "label": "Information architecture",
+      "heading": "Organize the product\naround the investigation.",
+      "html": "<p>The architecture separates the incidents page from incident detail. The incidents page contains the summary, top destinations, filters and incident list. Slack alerts provide a route into a particular incident.</p><p>The detail is structured as Impact → Technical diagnosis → Trend history → History and recovery. That sequence moves from why the incident matters to the evidence explaining it, then to how it evolves over time.</p><p>Progressive disclosure keeps the underlying nSpire information available for deeper investigation without asking every reader to interpret raw connectivity and device data immediately.</p>",
+      "gallery": [
+        {
+          "image": "qos/renders/qos-architecture.png",
+          "alt": "Information architecture · Incident list, Slack entry and four investigation layers",
+          "caption": "Information architecture · Incident list, Slack entry and four investigation layers",
+          "source": "qos/source/qos-architecture.pdf",
+          "width": 2400,
+          "height": 1781
+        }
+      ]
     },
     {
-      "label": "Recovery and confidence",
-      "heading": "Is it still happening?\nHow strong is the evidence?",
-      "html": "<p>Incident status, data freshness and recovery history help teams understand whether a problem is still active. Recovery needs an explicit rule, including how many healthy measurement cycles are required.</p><p>For P2, a breached threshold can be based on limited historical data. Confidence should therefore reflect the OpenSignal sample volume and communicate when evidence is limited.</p>"
+      "label": "Slack alert explorations",
+      "heading": "The alert should explain\nwhy it deserves attention.",
+      "html": "<p>The alert templates explore severity, destination, affected scope, impact, freshness and a link to the incident detail. This gives a Carrier stakeholder enough context to decide whether to investigate before opening the dashboard.</p><p>The P0 exploration emphasizes service availability and out-of-service devices. The P2 exploration relates measured latency to a country threshold and includes confidence as supporting context. Both preserve destination and network context.</p><p>The board also contains a P1 severe-degradation template. It is included here as an exploration: the documented MVP decision still limits the first release to P0 and P2. Likewise, visible acknowledgement controls are concepts whose operational rules would need definition.</p>",
+      "gallery": [
+        {
+          "image": "qos/originals/4546408cf4fd926f59aa2afd29826e153a688743.png",
+          "alt": "Holafly P0 alert exploration · Country outage detected",
+          "caption": "Holafly P0 alert exploration · Country outage detected",
+          "width": 727,
+          "height": 425
+        },
+        {
+          "image": "qos/originals/5fbe9c7ffb80ef9915ed08d92083ad108f46e08e.png",
+          "alt": "Holafly P2 alert exploration · Country latency threshold breached",
+          "caption": "Holafly P2 alert exploration · Country latency threshold breached",
+          "width": 707,
+          "height": 446
+        },
+        {
+          "image": "qos/originals/74fd41b3e9cc00a492aaa8f2fbfaf59e5a2cb8fe.png",
+          "alt": "Holafly P1 alert exploration · Severe degradation; deferred from the proposed MVP",
+          "caption": "Holafly P1 alert exploration · Severe degradation; deferred from the proposed MVP",
+          "width": 702,
+          "height": 463
+        }
+      ],
+      "note": "ILLUSTRATIVE CONTENT · Destinations, incident values, exposure estimates and timestamps in these templates demonstrate the information model. They are not production results."
     },
     {
-      "label": "Scope and dependencies",
-      "heading": "Make the dependencies\nas visible as the screens.",
-      "html": "<p>The work defines an incident-first direction, findings and decisions, a comparative benchmark, user flows, information architecture and wireframe explorations.</p><p>The MVP focuses on detection and investigation. Operational execution was left out until the team defines actions, owners, permissions and escalation rules.</p>",
+      "label": "Incident list",
+      "heading": "Prioritize before\nopening the technical detail.",
+      "html": "<p>The list wireframe brings active incidents, P0 and P2 incidents, unassigned incidents and potentially affected travellers into a shared overview. Destination cards provide a second route into the same operational question: which market requires attention?</p><p>The table combines severity, incident, destination, impact, trigger, start time, status and assignee. Search and filters help narrow the investigation while keeping enough context to compare rows.</p><p>The Top destinations ranking remained unresolved. Sorting by active travellers, commercial relevance, severity or incident volume could produce different priorities, so the interface direction needs an explicit product rule behind it.</p>",
+      "gallery": [
+        {
+          "image": "qos/renders/qos-overview.png",
+          "alt": "Incident-list wireframe · Summary, destinations, filters and incident comparison",
+          "caption": "Incident-list wireframe · Summary, destinations, filters and incident comparison",
+          "source": "qos/source/qos-overview.pdf",
+          "width": 2400,
+          "height": 1732
+        }
+      ],
+      "note": "PROTOTYPE STATE · The list contains active, recovered and resolved examples. Counts, names and values are sample data; their role is to demonstrate structure and states."
+    },
+    {
+      "label": "P2 investigation",
+      "heading": "Explain the breach,\nnot just the number.",
+      "html": "<p>The P2 detail explores a latency-threshold breach in Portugal. Its header establishes the incident, active state, detection time, duration and last update. The first cards separate potentially affected travellers, active travellers, estimated impact and affected monitored devices.</p><p>The trigger section compares current median latency with the configured country threshold and states the difference. Confidence is supported by the volume of historical OpenSignal measurements, so the reader can judge the evidence behind that baseline.</p><p>A trend chart adds timing and context to the breach. A partner-and-technology comparison helps distinguish a problem with one network from a broader destination problem. The history then records detection, the Slack alert and ongoing activity, while deeper nSpire measurements sit below.</p>",
+      "gallery": [
+        {
+          "image": "qos/renders/qos-detail.png",
+          "alt": "P2 detail exploration · Latency threshold, impact, evidence, partner comparison and history",
+          "caption": "P2 detail exploration · Latency threshold, impact, evidence, partner comparison and history",
+          "source": "qos/source/qos-detail.pdf",
+          "width": 1520,
+          "height": 2400
+        }
+      ],
+      "note": "SAMPLE SCENARIO · The displayed 186 ms metric and 145 ms threshold illustrate the explanation of a breach. They are design content, not verified live telemetry."
+    },
+    {
+      "label": "P0 investigation",
+      "heading": "A service interruption needs\na different explanation.",
+      "html": "<p>The P0 wireframe explores a network outage in Japan. It preserves the same investigation structure while changing the evidence: devices out of service, data availability, connection availability, out-of-service events and duration.</p><p>The availability chart makes the change over time visible. A comparison with other partner networks helps explain whether the outage is isolated to the affected operator. The affected-scope panel keeps destination, operator, cellular technology, data source and trigger source attached to the incident.</p><p>Reusing the hierarchy creates continuity between P0 and P2, while adapting the diagnosis prevents two different service conditions from being reduced to an identical set of generic metric cards.</p>",
+      "gallery": [
+        {
+          "image": "qos/renders/qos-outage.png",
+          "alt": "P0 detail exploration · Outage availability, monitored devices, partner comparison and incident history",
+          "caption": "P0 detail exploration · Outage availability, monitored devices, partner comparison and incident history",
+          "source": "qos/source/qos-outage.pdf",
+          "width": 1527,
+          "height": 2400
+        }
+      ],
+      "note": "SAMPLE SCENARIO · This is an active P0 exploration, not a screenshot proving recovery or a shipped operational response."
+    },
+    {
+      "label": "Impact and data boundaries",
+      "heading": "Measured evidence.\nEstimated traveller impact.\nForecast business exposure.",
+      "html": "<p>The wireframes explore three kinds of information that need different treatment. nSpire provides technical measurements about the monitored population. Traveller impact requires internal business data to connect the incident scope with active travellers. Expected support demand or refund exposure adds a further layer of estimation.</p><p>The business-impact cards distinguish Forecasted values from Observed values. Forecast support contacts and refund exposure explain a possible consequence if an incident continues; observed support contacts and refund requests describe what has already been recorded. Combining those categories without labels would make the interface seem more certain than its inputs allow.</p><p>The proposed design therefore separates technical evidence from business impact. The relationship between monitored devices and travellers, the sources for observed business data and the method behind forecasts all require validation before these concepts can become reliable operational information.</p>",
       "steps": [
         [
-          "Data and detection",
-          "Validate the nSpire feed, connect internal impact data and calculate confidence from sample volume."
+          "Technical signal",
+          "Measured device and network evidence within a defined observation window."
         ],
         [
-          "Product and operations",
-          "Define destination ranking, incident recovery rules and the responsibilities behind operational actions."
+          "Traveller impact",
+          "An estimate dependent on the relevant internal traveller data."
+        ],
+        [
+          "Business exposure",
+          "Forecasts and observations that need distinct labels, sources and calculation rules."
         ]
-      ],
-      "note": "STATUS · MVP ideation. The supplied work does not establish a launch, a validated reduction in detection time, or measured customer impact."
+      ]
     },
     {
-      "label": "Validation and reflection",
-      "heading": "A clearer operational model.\nImpact still to be tested.",
-      "html": "<p>The central contribution was turning technical data into a sequence of decisions: detect a signal, understand its urgency and location, inspect the evidence, then track recovery.</p><p>Proposed validation should check whether Carrier stakeholders can identify the incident requiring attention, distinguish technical evidence from traveller impact, and understand status, freshness and confidence without losing context.</p>",
+      "label": "Confidence and freshness",
+      "heading": "A threshold crossing needs\ncontext about the evidence.",
+      "html": "<p>A threshold can appear precise even when the historical sample behind it is limited. The documented decision is to calculate confidence using OpenSignal sample volume and explain when evidence is insufficient.</p><p>Freshness is a separate question. The incident header, last measurement and observation window help a stakeholder understand whether the available data describes the current situation. A recent alert cannot stand in for a current measurement indefinitely.</p><p>The latency chart below is one of the original visual assets used in the P2 exploration. Its role is to compare the current signal against the country threshold and locate the moment of detection, rather than present an isolated metric without a timeline.</p>",
+      "gallery": [
+        {
+          "image": "qos/originals/073e217ecd82a9bf9d94cd22b06b4469a4b4efaa.png",
+          "alt": "Original latency chart · Measured latency compared with a country threshold",
+          "caption": "Original latency chart · Measured latency compared with a country threshold",
+          "width": 1001,
+          "height": 309
+        }
+      ]
+    },
+    {
+      "label": "Recovery and operational boundaries",
+      "heading": "Recovery is a rule to define.\nResolution is a responsibility to assign.",
+      "html": "<p>The flow distinguishes active incidents from recovered or resolved ones. The history examples also show recovery validation pending and explain that resolution becomes available after recovery is confirmed.</p><p>For that model to work, the team needs to define the recovery condition and the number of healthy measurement cycles required. A single improved reading should not silently stand in for an agreed recovery rule.</p><p>The detail explorations include an assignee, recommended actions, reassignment and resolution concepts. Those elements extend beyond the documented initial scope of detection and investigation. They are retained as explorations, while actions, permissions, owners and escalation rules remain decisions for Product and Operations.</p>",
+      "note": "SCOPE DISTINCTION · A control appearing in a wireframe does not establish that its behavior was approved, implemented or released."
+    },
+    {
+      "label": "MVP decisions and dependencies",
+      "heading": "The boundary of the MVP\nis part of the design.",
+      "html": "<p>The proposed first release concentrates on P0 and P2 detection and investigation. It uses Slack to summarize an incident and the dashboard to prioritize, inspect evidence and track status. The deliverables make that direction concrete through the benchmark, decision matrix, flow, architecture, alert explorations and three dashboard wireframes.</p><p>Several dependencies remain visible rather than being resolved through interface copy alone. Product needs a destination-ranking rule. Data work needs to establish traveller-impact mapping and confidence. Recovery needs a stable definition. Product and Operations need to define the authority and responsibilities behind execution features.</p>",
       "steps": [
         [
-          "Proposed usability checks",
-          "Prioritize a destination, find the triggering metric, explain the impact estimate and recognize recovery."
+          "Signals and confidence",
+          "Validate the live nSpire feed, the detection logic and historical sample coverage. P1 remains deferred."
         ],
         [
-          "Proposed operational measures",
-          "Time to awareness and investigation, alert relevance and coordination with Support. Establish a baseline before attributing improvements."
+          "Impact and prioritization",
+          "Connect internal impact data and establish how destinations are ranked."
+        ],
+        [
+          "Lifecycle",
+          "Define freshness, recovery conditions and healthy measurement cycles."
+        ],
+        [
+          "Execution",
+          "Agree on owners, permissions and escalation rules before committing response actions."
         ]
+      ]
+    },
+    {
+      "label": "Outcome and validation",
+      "heading": "A defined direction.\nOperational impact still to be established.",
+      "html": "<p>The outcome documented in the research is a shift from a metrics-first dashboard to an incident-first experience. The design work connects that direction to specific information, views, entry points and data dependencies.</p><p>Validation should test whether a Carrier stakeholder can identify the incident requiring attention, explain why it triggered, distinguish monitored-device evidence from traveller-impact estimates, and understand freshness and recovery status. P0 and P2 should be tested as different scenarios, along with limited evidence and unavailable impact data.</p><p>Operational measures could include time to awareness and investigation, alert relevance and coordination with Support. They require a baseline and post-launch observation before attributing an improvement to the design. The supplied material does not establish a launch, measured time savings or a reduction in complaints or refunds.</p>",
+      "note": "REFLECTION · Making an incident understandable also means making uncertainty, missing data and operational responsibilities visible."
+    },
+    {
+      "label": "Complete visual source",
+      "heading": "The full visual record,\nwith its original context.",
+      "html": "<p>The case includes every unique embedded image from the supplied Designs page: 26 image layers resolve to 25 unique originals, including one repeated P2 alert. It also includes the user flow, architecture and complete board and wireframe exports.</p><p>The documents below retain the original context, severity definitions, findings, benchmark, evaluation criteria and alert explorations. They support the editorial narrative above and can be enlarged or downloaded as vector PDFs.</p>",
+      "evidence": [
+        {
+          "image": "qos/renders/qos-context.png",
+          "alt": "Original board · General context, problem, impact and opportunity",
+          "caption": "Original board · General context, problem, impact and opportunity",
+          "source": "qos/source/qos-context.pdf",
+          "width": 2400,
+          "height": 1699
+        },
+        {
+          "image": "qos/renders/qos-severity.png",
+          "alt": "Original board · Severity taxonomy and meaning",
+          "caption": "Original board · Severity taxonomy and meaning",
+          "source": "qos/source/qos-severity.pdf",
+          "width": 2400,
+          "height": 946
+        },
+        {
+          "image": "qos/renders/qos-decisions.png",
+          "alt": "Original board · Findings, design decisions and dependencies",
+          "caption": "Original board · Findings, design decisions and dependencies",
+          "source": "qos/source/qos-decisions.pdf",
+          "width": 2400,
+          "height": 1369
+        },
+        {
+          "image": "qos/renders/qos-benchmark.png",
+          "alt": "Original board · Comparative benchmark",
+          "caption": "Original board · Comparative benchmark",
+          "source": "qos/source/qos-benchmark.pdf",
+          "width": 2400,
+          "height": 609
+        },
+        {
+          "image": "qos/renders/qos-criteria.png",
+          "alt": "Original board · Evaluation criteria and rating definitions",
+          "caption": "Original board · Evaluation criteria and rating definitions",
+          "source": "qos/source/qos-criteria.pdf",
+          "width": 2400,
+          "height": 1249
+        },
+        {
+          "image": "qos/renders/qos-alerts.png",
+          "alt": "Original board · P0, P2 and deferred P1 alert explorations",
+          "caption": "Original board · P0, P2 and deferred P1 alert explorations",
+          "source": "qos/source/qos-alerts.pdf",
+          "width": 2400,
+          "height": 567
+        }
       ],
-      "note": "VALIDATION PLAN · Proposed checks and measures, not achieved results."
+      "evidenceTitle": "Open the six original documentation and alert boards",
+      "note": "SOURCE MATERIAL · Reference-product images belong to their respective owners. The original assets are preserved, including prototype labels and sample content. Editorial benchmark takeaways follow the written research summary."
     }
   ]
 };
