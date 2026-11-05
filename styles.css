@@ -315,3 +315,17 @@
 .bulk-detail{left:63%;top:55%;width:30%;height:34%;transform:rotate(5deg);background:#fff}
 .projects-grid .project .cover-bulk .bulk-detail img{position:absolute;width:260%;height:auto;left:-157%;top:-88%}
 @media(prefers-reduced-motion:no-preference){.project:hover .case-cover .cover-screen{translate:0 -1cqw;transition:translate .3s ease}}
+
+/* Responsive case study galleries and supporting evidence. */
+.case-gallery{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;margin-top:12px}
+.case-gallery.single{grid-template-columns:minmax(0,1fr)}
+.case-gallery figure{margin:0;min-width:0}
+.case-gallery .zoom{width:100%;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.case-gallery img{display:block;width:100%;height:auto}
+.case-gallery figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;font-size:12px;line-height:1.65;color:var(--muted);margin-top:12px}
+.source-download{text-decoration:underline;text-underline-offset:4px;white-space:nowrap}
+.case-evidence{grid-column:1/-1;min-width:0;border:1px solid var(--line);border-radius:8px;padding:20px 24px}
+.case-evidence summary{cursor:pointer;font-size:15px;line-height:1.5;padding:5px 0}
+.case-evidence[open] summary{margin-bottom:24px}
+.case-evidence summary:focus-visible,.source-download:focus-visible{outline:2px solid var(--ink);outline-offset:5px}
+@media(max-width:680px){.case-gallery{grid-template-columns:1fr;gap:30px}.case-gallery figcaption{font-size:11px}.case-evidence{padding:16px}.case-evidence summary{font-size:13px}}
