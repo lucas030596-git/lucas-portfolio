@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 888" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">Holafly QoS — From signal to clarity</title>
+<desc id="desc">An abstract network signal becomes an incident alert and a recovery signal. Conceptual cover artwork, not a product screenshot.</desc>
+<defs>
+ <pattern id="dots" x="0" y="0" width="36" height="36" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1.2" fill="#E9EAE1" opacity=".1"/></pattern>
+ <filter id="shadow" x="-50%" y="-60%" width="200%" height="230%"><feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#101C15" flood-opacity=".3"/></filter>
+ <clipPath id="canvas"><rect width="1200" height="888" rx="0"/></clipPath>
+</defs>
+<g clip-path="url(#canvas)">
+<path fill="#27372F" d="M0 0h1200v888H0z"/>
+<path fill="url(#dots)" d="M490 0h710v888H490z"/>
+<circle cx="914" cy="371" r="310" stroke="#DDE4D6" stroke-opacity=".08"/>
+<circle cx="914" cy="371" r="228" stroke="#DDE4D6" stroke-opacity=".11"/>
+<circle cx="914" cy="371" r="146" stroke="#DDE4D6" stroke-opacity=".1"/>
+<text x="76" y="95" fill="#F5F3E9" font-family="Arial, sans-serif" font-size="27" font-weight="600" letter-spacing="-1">holafly</text>
+<path d="M175 70v31" stroke="#718171"/>
+<text x="198" y="94" fill="#B3C1AD" font-family="Arial, sans-serif" font-size="17" letter-spacing="2.5">QoS MONITORING</text>
+<circle cx="1115" cy="82" r="5" fill="#D9F46B"/>
+<text x="76" y="316" fill="#F5F3E9" font-family="Arial, sans-serif" font-size="79" letter-spacing="-4.6">From signal</text>
+<text x="76" y="411" fill="#D9F46B" font-family="Georgia, serif" font-style="italic" font-size="87" letter-spacing="-4">to clarity.</text>
+<text x="80" y="464" fill="#B3C1AD" font-family="Arial, sans-serif" font-size="18" letter-spacing=".5">A clearer response to network incidents.</text>
+<path d="M914 371C788 371 795 205 694 205M914 371c134 0 104-176 202-176M914 371c0 107 147 96 147 192M914 371c-164 0-156 202-281 202" stroke="#A9B7A0" stroke-width="2" stroke-opacity=".55"/>
+<circle cx="694" cy="205" r="25" fill="#32473A" stroke="#A1B29B" stroke-width="2"/>
+<circle cx="694" cy="205" r="7" fill="#D9F46B"/>
+<circle cx="1116" cy="195" r="19" fill="#32473A" stroke="#A1B29B" stroke-width="2"/>
+<circle cx="1116" cy="195" r="5" fill="#F5F3E9"/>
+<circle cx="1061" cy="563" r="43" fill="#D9F46B"/>
+<path d="m1044 563 12 12 23-26" stroke="#27372F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<g filter="url(#shadow)">
+<rect x="802" y="259" width="224" height="224" rx="68" fill="#F37470" transform="rotate(-9 914 371)"/>
+<path d="M840 371h33l17-35 27 77 24-64 15 22h32" stroke="#FFF6EB" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<circle cx="993" cy="281" r="18" fill="#F5F3E9" stroke="#27372F" stroke-width="7"/>
+<g filter="url(#shadow)">
+<rect x="610" y="551" width="350" height="112" rx="22" fill="#F5F3E9" transform="rotate(-5 785 607)"/>
+<g transform="rotate(-5 785 607)">
+<circle cx="655" cy="607" r="20" fill="#F7D7CB"/>
+<path d="M655 597v12m0 7v1" stroke="#B54B46" stroke-width="3" stroke-linecap="round"/>
+<text x="692" y="600" fill="#27372F" font-family="Arial, sans-serif" font-size="24" font-weight="600" letter-spacing="-.7">Incident detected</text>
+<text x="692" y="628" fill="#6E776B" font-family="Arial, sans-serif" font-size="15">A signal. A next step.</text>
+</g></g>
+<path d="M80 696h1040" stroke="#73856D" stroke-opacity=".4"/>
+<g fill="#D5DDCB" font-family="Arial, sans-serif" font-size="16" letter-spacing="2">
+<text x="80" y="746">DETECT</text><text x="460" y="746">INVESTIGATE</text><text x="937" y="746">RECOVER</text>
+</g>
+<path d="M199 740h204m-8-6 8 6-8 6m243-6h239m-8-6 8 6-8 6" stroke="#8DA081" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="80" y="821" fill="#8FA188" font-family="Arial, sans-serif" font-size="12" letter-spacing="2">CARRIER OPERATIONS / PRODUCT DESIGN</text>
+<text x="1120" y="821" text-anchor="end" fill="#8FA188" font-family="Arial, sans-serif" font-size="12" letter-spacing="2">CONCEPTUAL ARTWORK</text>
+</g></svg>
