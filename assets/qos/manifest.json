@@ -1,0 +1,394 @@
+{
+  "source": "https://www.figma.com/design/BxE83CsHFy566RilfjT0cS/Untitled?node-id=1-3",
+  "imageLayers": 26,
+  "uniqueOriginalImages": 25,
+  "renderedBoardsAndDiagrams": 11,
+  "originals": [
+    {
+      "nodeId": "32:592",
+      "images": [
+        {
+          "hash": "ccd8f18315e71263b2964ec83ac3c5e8b44b4ed3",
+          "width": 1920,
+          "height": 866,
+          "scaleMode": "CROP",
+          "path": "originals/ccd8f18315e71263b2964ec83ac3c5e8b44b4ed3.png"
+        }
+      ]
+    },
+    {
+      "nodeId": "32:645",
+      "images": [
+        {
+          "hash": "508bebc44b0bd2e60e3c95623af9f54c5efb8f41",
+          "width": 657,
+          "height": 128,
+          "scaleMode": "CROP",
+          "path": "originals/508bebc44b0bd2e60e3c95623af9f54c5efb8f41.png"
+        }
+      ]
+    },
+    {
+      "nodeId": "32:921",
+      "images": [
+        {
+          "hash": "8753655d4f9c32d6028efa110fed02a3de47cc60",
+          "width": 1024,
+          "height": 822,
+          "scaleMode": "FILL",
+          "path": "originals/8753655d4f9c32d6028efa110fed02a3de47cc60.png"
+        }
+      ]
+    },
+    {
+      "nodeId": "32:922",
+      "images": [
+        {
+          "hash": "593e1b755b5d2063854da71441d408ca13a27290",
+          "width": 1024,
+          "height": 604,
+          "scaleMode": "FILL",
+          "path": "originals/593e1b755b5d2063854da71441d408ca13a27290.png"
+        }
+      ]
+    },
+    {
+      "nodeId": "32:923",
+      "images": [
+        {
+          "hash": "6651d00b74970ecfbc41e8e04c648372ce1034e5",
+          "width": 1920,
+          "height": 976,
+          "scaleMode": "FILL",
+          "path": "originals/6651d00b74970ecfbc41e8e04c648372ce1034e5.png"
+        }
+      ]
+    },
+    {
+      "nodeId": "32:924",
+      "images": [
+        {
+          "hash": "98e3787240762fc9ac6bf4e999c18526fa1e4e53",
+          "width": 1572,
+          "height": 996,
+          "scaleMode": "FILL",
+          "path": "originals/98e3787240762fc9ac6bf4e999c18526fa1e4e53.png"
+        }
+      ]
+    },
+    {
+      "nodeId": "32:925",
+      "images": [
+        {
+          "hash": "0a56a40a5806228512139abed2d5119dff341d8b",
+          "width": 1920,
+          "height": 1437,
+          "scaleMode": "FILL",
+          "path": "originals/0a56a40a5806228512139abed2d5119dff341d8b.png"
+        }
+      ]
+    },
+    {
+      "nodeId": "32:928",
+      "images": [
+        {
+          "hash": "dd940fa5a0739e23cc55402891fbe3e7d0fa0dfd",
+          "width": 800,
+          "height": 450,
+          "scaleMode": "FILL",
+          "path": "originals/dd940fa5a0739e23cc55402891fbe3e7d0fa0dfd.png"
+        }
+      ]
+    },
+    {
+      "nodeId": "32:929",
+      "images": [
+        {
+          "hash": "956d35109cb6556524cbb1277af9c72af163c44c",
+          "width": 940,
+          "height": 406,
+          "scaleMode": "FILL",
+          "path": "originals/956d35109cb6556524cbb1277af9c72af163c44c.png"
+        }
+      ]
+    },
+    {
+      "nodeId": "32:930",
+      "images": [
+        {
+          "hash": "1d2e8d2a67d1240588e035f48a79e0fd11001297",
+          "width": 900,
+          "height": 480,
+          "scaleMode": "FILL",
+          "path": "originals/1d2e8d2a67d1240588e035f48a79e0fd11001297.png"
+        }
+      ]
+    },
+    {
+      "nodeId": "32:932",
+      "images": [
+        {
+          "hash": "2664af28f6a4afeddfffbc08e8336dc82736989c",
+          "width": 4096,
+          "height": 2304,
+          "scaleMode": "FILL",
+          "path": "originals/2664af28f6a4afeddfffbc08e8336dc82736989c.png"
+        }
+      ]
+    },
+    {
+      "nodeId": "32:933",
+      "images": [
+        {
+          "hash": "e0b6ba968450bedb2472566ebc61d8f034d5392b",
+          "width": 3106,
+          "height": 1696,
+          "scaleMode": "FILL",
+          "path": "originals/e0b6ba968450bedb2472566ebc61d8f034d5392b.png"
+        }
+      ]
+    },
+    {
+      "nodeId": "32:934",
+      "images": [
+        {
+          "hash": "9d52f93b616f279f2ddcdb0a758e13ce31e42372",
+          "width": 3840,
+          "height": 1950,
+          "scaleMode": "FILL",
+          "path": "originals/9d52f93b616f279f2ddcdb0a758e13ce31e42372.png"
+        }
+      ]
+    },
+    {
+      "nodeId": "32:935",
+      "images": [
+        {
+          "hash": "9c2a4a59a69cc6a0bae7c370c39e71c266ba553d",
+          "width": 3564,
+          "height": 2100,
+          "scaleMode": "FILL",
+          "path": "originals/9c2a4a59a69cc6a0bae7c370c39e71c266ba553d.png"
+        }
+      ]
+    },
+    {
+      "nodeId": "32:936",
+      "images": [
+        {
+          "hash": "73fd5a67379827a557fb6d6a623970cda27c5431",
+          "width": 2954,
+          "height": 2090,
+          "scaleMode": "FILL",
+          "path": "originals/73fd5a67379827a557fb6d6a623970cda27c5431.png"
+        }
+      ]
+    },
+    {
+      "nodeId": "32:937",
+      "images": [
+        {
+          "hash": "45726499873ba6b23f05d60daaecffaef62a445c",
+          "width": 1280,
+          "height": 720,
+          "scaleMode": "FILL",
+          "path": "originals/45726499873ba6b23f05d60daaecffaef62a445c.png"
+        }
+      ]
+    },
+    {
+      "nodeId": "32:938",
+      "images": [
+        {
+          "hash": "05a004410588bdcb77a1862e9728129a19f3aaf9",
+          "width": 1500,
+          "height": 824,
+          "scaleMode": "FILL",
+          "path": "originals/05a004410588bdcb77a1862e9728129a19f3aaf9.png"
+        }
+      ]
+    },
+    {
+      "nodeId": "32:939",
+      "images": [
+        {
+          "hash": "b5d082779f380c84561e6bbef8db366d5c3b2d7d",
+          "width": 2000,
+          "height": 1099,
+          "scaleMode": "FILL",
+          "path": "originals/b5d082779f380c84561e6bbef8db366d5c3b2d7d.png"
+        }
+      ]
+    },
+    {
+      "nodeId": "32:958",
+      "images": [
+        {
+          "hash": "19d239b3a0dc32653a753f95e4878a72b7a0c302",
+          "width": 2388,
+          "height": 1821,
+          "scaleMode": "FILL",
+          "path": "originals/19d239b3a0dc32653a753f95e4878a72b7a0c302.png"
+        }
+      ]
+    },
+    {
+      "nodeId": "32:959",
+      "images": [
+        {
+          "hash": "ea6d6b264539fa8a50407bfa63665083f90fe778",
+          "width": 1462,
+          "height": 618,
+          "scaleMode": "FILL",
+          "path": "originals/ea6d6b264539fa8a50407bfa63665083f90fe778.png"
+        }
+      ]
+    },
+    {
+      "nodeId": "32:960",
+      "images": [
+        {
+          "hash": "865971a358d479f6f22e394951db083be68a5de3",
+          "width": 1172,
+          "height": 813,
+          "scaleMode": "FILL",
+          "path": "originals/865971a358d479f6f22e394951db083be68a5de3.png"
+        }
+      ]
+    },
+    {
+      "nodeId": "32:1021",
+      "images": [
+        {
+          "hash": "5fbe9c7ffb80ef9915ed08d92083ad108f46e08e",
+          "width": 707,
+          "height": 446,
+          "scaleMode": "FILL",
+          "path": "originals/5fbe9c7ffb80ef9915ed08d92083ad108f46e08e.png"
+        }
+      ]
+    },
+    {
+      "nodeId": "32:1391",
+      "images": [
+        {
+          "hash": "073e217ecd82a9bf9d94cd22b06b4469a4b4efaa",
+          "width": 1001,
+          "height": 309,
+          "scaleMode": "FILL",
+          "path": "originals/073e217ecd82a9bf9d94cd22b06b4469a4b4efaa.png"
+        }
+      ]
+    },
+    {
+      "nodeId": "32:1896",
+      "images": [
+        {
+          "hash": "74fd41b3e9cc00a492aaa8f2fbfaf59e5a2cb8fe",
+          "width": 702,
+          "height": 463,
+          "scaleMode": "FILL",
+          "path": "originals/74fd41b3e9cc00a492aaa8f2fbfaf59e5a2cb8fe.png"
+        }
+      ]
+    },
+    {
+      "nodeId": "32:1897",
+      "images": [
+        {
+          "hash": "5fbe9c7ffb80ef9915ed08d92083ad108f46e08e",
+          "width": 707,
+          "height": 446,
+          "scaleMode": "FILL",
+          "path": "originals/5fbe9c7ffb80ef9915ed08d92083ad108f46e08e.png"
+        }
+      ]
+    },
+    {
+      "nodeId": "32:1898",
+      "images": [
+        {
+          "hash": "4546408cf4fd926f59aa2afd29826e153a688743",
+          "width": 727,
+          "height": 425,
+          "scaleMode": "CROP",
+          "path": "originals/4546408cf4fd926f59aa2afd29826e153a688743.png"
+        }
+      ]
+    }
+  ],
+  "renders": [
+    {
+      "path": "renders/qos-context.png",
+      "width": 2400,
+      "height": 1699,
+      "vectorSource": "source/qos-context.pdf"
+    },
+    {
+      "path": "renders/qos-severity.png",
+      "width": 2400,
+      "height": 946,
+      "vectorSource": "source/qos-severity.pdf"
+    },
+    {
+      "path": "renders/qos-decisions.png",
+      "width": 2400,
+      "height": 1369,
+      "vectorSource": "source/qos-decisions.pdf"
+    },
+    {
+      "path": "renders/qos-benchmark.png",
+      "width": 2400,
+      "height": 609,
+      "vectorSource": "source/qos-benchmark.pdf"
+    },
+    {
+      "path": "renders/qos-criteria.png",
+      "width": 2400,
+      "height": 1249,
+      "vectorSource": "source/qos-criteria.pdf"
+    },
+    {
+      "path": "renders/qos-overview.png",
+      "width": 2400,
+      "height": 1732,
+      "vectorSource": "source/qos-overview.pdf"
+    },
+    {
+      "path": "renders/qos-alerts.png",
+      "width": 2400,
+      "height": 567,
+      "vectorSource": "source/qos-alerts.pdf"
+    },
+    {
+      "path": "renders/qos-detail.png",
+      "width": 1520,
+      "height": 2400,
+      "vectorSource": "source/qos-detail.pdf"
+    },
+    {
+      "path": "renders/qos-outage.png",
+      "width": 1527,
+      "height": 2400,
+      "vectorSource": "source/qos-outage.pdf"
+    },
+    {
+      "path": "renders/qos-architecture.png",
+      "width": 2400,
+      "height": 1781,
+      "vectorSource": "source/qos-architecture.pdf"
+    },
+    {
+      "path": "renders/qos-user-flow.svg",
+      "sourceNode": "32:961"
+    }
+  ],
+  "notes": [
+    "Original embedded image bytes are unchanged. The repeated P2 Slack template shares one image file.",
+    "Raster board previews were rendered from original vector PDF exports. No source artwork was redrawn.",
+    "The legacy qos-overview.png remains for compatibility with the original project card.",
+    "Third-party benchmark screenshots are research references, not Holafly interfaces.",
+    "Benchmark editorial takeaways preserve the correction in commit 7c111f3; source boards remain unmodified.",
+    "P1 and response controls shown in explorations do not imply inclusion in the defined initial MVP."
+  ]
+}
