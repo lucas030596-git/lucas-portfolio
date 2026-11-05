@@ -329,3 +329,9 @@
 .case-evidence[open] summary{margin-bottom:24px}
 .case-evidence summary:focus-visible,.source-download:focus-visible{outline:2px solid var(--ink);outline-offset:5px}
 @media(max-width:680px){.case-gallery{grid-template-columns:1fr;gap:30px}.case-gallery figcaption{font-size:11px}.case-evidence{padding:16px}.case-evidence summary{font-size:13px}}
+
+/* Give the homepage portrait enough presence at every viewport size. */
+.hero-aside{gap:22px}
+.hero-aside .portrait{width:128px;height:152px;flex-shrink:0;border-radius:10px;object-position:center 30%}
+.hero-aside .person{min-width:0}
+@media(max-width:680px){.hero-aside{gap:18px}.hero-aside .portrait{width:96px;height:114px}}
