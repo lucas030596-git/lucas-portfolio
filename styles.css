@@ -335,3 +335,26 @@
 .hero-aside .portrait{width:128px;height:152px;flex-shrink:0;border-radius:10px;object-position:center 30%}
 .hero-aside .person{min-width:0}
 @media(max-width:680px){.hero-aside{gap:18px}.hero-aside .portrait{width:96px;height:114px}}
+
+/* Language switcher */
+.nav nav{margin-left:auto}
+.nav .nav-contact [data-nav-label]{font-size:inherit}
+.language-select{
+  color:var(--ink);
+  background:transparent;
+  border:1px solid var(--line);
+  border-radius:999px;
+  font-size:12px;
+  font-weight:600;
+  margin-left:28px;
+  min-height:34px;
+  padding:0 8px;
+  cursor:pointer;
+}
+.language-select:focus-visible{outline:3px solid #657a26;outline-offset:4px}
+html[lang="es"] .hero h1,html[lang="pt-BR"] .hero h1{font-size:clamp(40px,8.4vw,132px)}
+@media(max-width:680px){
+  .nav{display:grid;grid-template-columns:1fr auto;gap:12px;height:auto;padding-block:13px}
+  .nav nav{grid-row:2;grid-column:1/-1;margin-left:0;gap:24px}
+  .language-select{grid-row:1;grid-column:2;margin-left:0}
+}
