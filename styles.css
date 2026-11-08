@@ -370,3 +370,6 @@ html[lang="es"] .hero h1,html[lang="pt-BR"] .hero h1{font-size:clamp(40px,8.4vw,
   .nav nav{grid-row:2;grid-column:1/-1;margin-left:0;gap:24px}
   .language-links{grid-row:1;grid-column:2;margin-left:0;padding-left:0;border-left:0}
 }
+
+.contact-location{font-size:14px;color:var(--ink)}
+.page-action{margin-top:25px}
