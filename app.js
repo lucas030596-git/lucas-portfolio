@@ -7,11 +7,23 @@ function getLanguage(){
 }
 let language=getLanguage();
 const t=text=>window.PORTFOLIO_TRANSLATIONS?.[text]?.[['es','pt'].indexOf(language)]??text;
-const languageSelector=document.querySelector('#language');
+const languageLinks=document.querySelector('#language');
+function languageURL(code){
+ const url=new URL(location.href);
+ if(code==='en')url.searchParams.delete('lang');
+ else url.searchParams.set('lang',code);
+ return url;
+}
+function updateLanguageLinks(){
+ for(const link of languageLinks.querySelectorAll('[data-language]')){
+  link.href=languageURL(link.dataset.language).href;
+  if(link.dataset.language===language)link.setAttribute('aria-current','true');
+  else link.removeAttribute('aria-current');
+ }
+}
 function updateLanguage(){
  document.documentElement.lang=languages[language];
- languageSelector.value=language;
- languageSelector.setAttribute('aria-label',t('Language'));
+ languageLinks.setAttribute('aria-label',t('Language'));
  document.querySelector('.skip').textContent=t('Skip to content');
  document.querySelector('.brand').setAttribute('aria-label',t('Lucas Escobar home'));
  document.querySelector('.nav nav').setAttribute('aria-label',t('Main navigation'));
@@ -59,16 +71,17 @@ function renderCase(c,slug){const meta=[['Role',c.responsibilities],['Product',c
 function gate(slug){const cases={'goodrec':[t("GoodRec / Password required"),'GoodRec<br>Onboarding'],'qos':[t("Holafly / Password required"),t("Holafly QoS<br>Monitoring")],'b2b-plans':[t("Holafly / Password required"),t("HBC Plans<br>Redesign")],'bulk-assignment':[t("Holafly / Password required"),t("HBC Bulk<br>Assignment")]},[label,title]=cases[slug];return `<div class="wrap"><a class="back" href="#/projects">← ${t("All projects")}</a><section class="gate animate"><span class="tag">${label}</span><h1>${title}</h1><p>${t("This case study is available with a password. Have one? You can explore the full story below.")}${language==='en'?'':` ${t('Full case study in English.')}`}</p><form id="access-form" data-slug="${slug}"><label class="field"><span>${t("Case study password")}</span><input type="password" name="password" autocomplete="current-password" required placeholder="${t("Enter your password")}"></label><button type="submit" class="button">${t("Unlock case study")} <span aria-hidden="true">↗</span></button><p class="form-status error" role="alert"></p></form><div style="margin-top:25px">${link(t("Request access"),'mailto:hello@lucasescobar.me?subject='+encodeURIComponent(t('Portfolio case study access')))}</div></section></div>${footer()}`;}
 function getRoute(){const hash=location.hash;if(!hash||hash==='#/')return 'home';if(!hash.startsWith('#/'))return null;return hash.slice(2).split('?')[0]||'home';}
 const titles={qos:'Holafly QoS Monitoring',projects:'Selected work',about:'About',contact:'Let’s talk',goodrec:'GoodRec Onboarding','b2b-plans':'HBC Plans Redesign','bulk-assignment':'HBC Bulk Assignment'};
-function render(focus=false){const next=getRoute();if(next===null)return;route=next;if(lightbox.open)lightbox.close();document.title=route==='home'?('Lucas Escobar — '+t('Product Designer')):(t(Object.hasOwn(titles,route)?titles[route]:'Page not found')+' — Lucas Escobar');root.innerHTML=route==='home'?home():route==='projects'?listing():route==='about'?about():route==='contact'?contact():unlocked[route]?renderCase(unlocked[route],route):Object.hasOwn(DATA.encrypted.cases,route)?gate(route):`<div class="wrap"><header class="page-heading"><p class="eyebrow">${t("404 / A different path")}</p><h1>${t("This page isn’t here.")}</h1><p>${t("Let’s get you back to the work.")}</p><div style="margin-top:25px">${link(t("Explore my projects"),'#/projects')}</div></header></div>${footer()}`;document.querySelectorAll('[data-nav]').forEach(a=>{if(a.dataset.nav===route)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});window.scrollTo({top:0,behavior:'instant'});if(focus)root.focus({preventScroll:true});}
+function render(focus=false){updateLanguageLinks();const next=getRoute();if(next===null)return;route=next;if(lightbox.open)lightbox.close();document.title=route==='home'?('Lucas Escobar — '+t('Product Designer')):(t(Object.hasOwn(titles,route)?titles[route]:'Page not found')+' — Lucas Escobar');root.innerHTML=route==='home'?home():route==='projects'?listing():route==='about'?about():route==='contact'?contact():unlocked[route]?renderCase(unlocked[route],route):Object.hasOwn(DATA.encrypted.cases,route)?gate(route):`<div class="wrap"><header class="page-heading"><p class="eyebrow">${t("404 / A different path")}</p><h1>${t("This page isn’t here.")}</h1><p>${t("Let’s get you back to the work.")}</p><div style="margin-top:25px">${link(t("Explore my projects"),'#/projects')}</div></header></div>${footer()}`;document.querySelectorAll('[data-nav]').forEach(a=>{if(a.dataset.nav===route)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});window.scrollTo({top:0,behavior:'instant'});if(focus)root.focus({preventScroll:true});}
 async function unlock(form){const slug=form.dataset.slug,input=form.elements.password,btn=form.querySelector('button'),err=form.querySelector('[role=alert]');btn.disabled=true;btn.textContent=t("Opening…");err.textContent='';try{if(!window.crypto?.subtle)throw new Error('unavailable');const bytes=b64=>Uint8Array.from(atob(b64),c=>c.charCodeAt(0));const cfg=DATA.encrypted,c=cfg.cases[slug],mat=await crypto.subtle.importKey('raw',new TextEncoder().encode(input.value),'PBKDF2',false,['deriveKey']);const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:bytes(cfg.salt),iterations:cfg.iterations,hash:'SHA-256'},mat,{name:'AES-GCM',length:256},false,['decrypt']);const plain=await crypto.subtle.decrypt({name:'AES-GCM',iv:bytes(c.iv)},key,bytes(c.cipher));unlocked[slug]=JSON.parse(new TextDecoder().decode(plain));input.value='';if(route===slug)render(true);}catch(e){if(form.isConnected){err.textContent=e.message==='unavailable'?t("Please open this portfolio using HTTPS to unlock the case study."):t("That password didn’t match. Please try again.");input.value='';input.focus();}}finally{if(form.isConnected){btn.disabled=false;btn.innerHTML=`${t('Unlock case study')} <span aria-hidden="true">↗</span>`;}}}
 document.addEventListener('submit',e=>{if(e.target.id==='access-form'){e.preventDefault();unlock(e.target);}if(e.target.id==='contact-form'){e.preventDefault();const f=new FormData(e.target),name=String(f.get('name')).trim(),msg=String(f.get('message')).trim();if(!name||!msg){document.querySelector('#contact-status').textContent=t("Please add your name and a short message.");return;}location.href='mailto:hello@lucasescobar.me?subject='+encodeURIComponent(t("Portfolio enquiry from ")+name)+'&body='+encodeURIComponent(t("Name: ")+name+'\n'+t('Email: ')+f.get('email')+'\n\n'+msg);document.querySelector('#contact-status').textContent=t("Your email app should open with a draft. If it doesn’t, email hello@lucasescobar.me directly.");}});
 document.addEventListener('click',e=>{const section=e.target.closest('[data-section]');if(section){e.preventDefault();const target=document.getElementById(section.dataset.section);target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});target.tabIndex=-1;target.focus({preventScroll:true});return;}const skip=e.target.closest('.skip');if(skip){e.preventDefault();root.focus();root.scrollIntoView();return;}const zoom=e.target.closest('[data-image]');if(zoom){lightbox.querySelector('img').src=asset(zoom.dataset.image);lightbox.querySelector('img').alt=zoom.dataset.caption;lightbox.querySelector('p').textContent=zoom.dataset.caption;lightbox.showModal();document.body.classList.add('modal-open');}});
 lightbox.querySelector('.close').addEventListener('click',()=>lightbox.close());lightbox.addEventListener('close',()=>document.body.classList.remove('modal-open'));lightbox.addEventListener('click',e=>{if(e.target===lightbox){const r=lightbox.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)lightbox.close();}});
-languageSelector.addEventListener('change',()=>{
- const url=new URL(location.href);
- if(languageSelector.value==='en')url.searchParams.delete('lang');
- else url.searchParams.set('lang',languageSelector.value);
- history.pushState(null,'',url);
+languageLinks.addEventListener('click',event=>{
+ const link=event.target.closest('[data-language]');
+ if(!link||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+ event.preventDefault();
+ if(link.dataset.language===language)return;
+ history.pushState(null,'',link.href);
  const contactForm=document.querySelector('#contact-form');
  language=getLanguage();
  updateLanguage();
