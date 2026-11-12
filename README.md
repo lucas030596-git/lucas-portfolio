@@ -24,12 +24,14 @@ All portfolio content and imagery belong to their respective owners.
 
 ## Google Analytics 4
 
-Analytics stays disabled until the `ga-measurement-id` meta tag in `index.html`
-contains the real web-stream measurement ID (`G-…`). It only runs on
+The `ga-measurement-id` meta tag in `index.html` connects to `G-6Q09Z8VF0H`.
+Analytics only runs on
 `lucasescobar.me` and `www.lucasescobar.me`, never on local previews.
 
 Before activation, in GA4 Admin → Data streams → this web stream → Enhanced
-measurement, disable automatic Page views (including history-change tracking).
+measurement → Page views → Show advanced settings, disable page changes
+based on browser history events. Initial automatic views are disabled in code
+with `send_page_view: false`.
 The application sends pageviews manually because navigation uses hash routes.
 Do not install an additional Google tag or Tag Manager pageview tag.
 
