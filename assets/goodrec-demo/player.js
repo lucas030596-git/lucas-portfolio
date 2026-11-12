@@ -41,7 +41,7 @@ $('#brand-logo').src=assets.logo;
 root.classList.toggle('reduced',reduced);
 let sceneAnimations=[],photoOverride=false;
 function updateControls(){
- $('#play').textContent=playing?'Ⅱ':'▶';
+ $('#play').textContent=playing?'Ⅱ':'▶\uFE0E';
  $('#play').setAttribute('aria-label',playing?'Pause':'Play');
  $('#play').setAttribute('aria-pressed',String(playing));
  $('#motion').textContent=reduced?'Reduced motion':'Full motion';

@@ -72,3 +72,6 @@ body{background:#101111}
  .controls{gap:10px;flex-wrap:wrap}
  .control-right{width:100%;justify-content:center}
 }
+
+.time{white-space:nowrap;flex-shrink:0;min-width:90px}
+.play{background:var(--red);color:#fff}
