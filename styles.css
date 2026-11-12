@@ -373,3 +373,12 @@ html[lang="es"] .hero h1,html[lang="pt-BR"] .hero h1{font-size:clamp(40px,8.4vw,
 
 .contact-location{font-size:14px;color:var(--ink)}
 .page-action{margin-top:25px}
+
+/* GoodRec supplementary walkthrough, following Initial setup. */
+.case-demo{grid-column:1/-1;width:100%;min-width:0;margin-top:40px}
+.case-demo-heading{max-width:640px;margin:0 0 24px}
+.case-demo-heading h3{font-size:clamp(24px,3vw,34px);line-height:1.18;letter-spacing:-.04em;margin:0 0 12px}
+.case-demo-heading p,.case-demo-note{font-size:14px;line-height:1.6;color:var(--muted)}
+.goodrec-demo-frame{display:block;width:100%;height:700px;border:0;border-radius:18px;background:#101111}
+.case-demo-note{margin:12px 0 0}
+@media(max-width:600px){.goodrec-demo-frame{height:720px}.case-demo{margin-top:24px}}
