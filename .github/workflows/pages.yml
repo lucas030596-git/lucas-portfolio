@@ -31,7 +31,7 @@ jobs:
       - name: Stage public site files
         run: |
           mkdir -p "$RUNNER_TEMP/portfolio"
-          cp -R .nojekyll index.html favicon.svg styles.css app.js analytics.js translations.js content.js assets "$RUNNER_TEMP/portfolio/"
+          cp -R .nojekyll index.html favicon.svg styles.css app.js analytics.js portfolio-config.js translations.js content.js assets "$RUNNER_TEMP/portfolio/"
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3
         with:
