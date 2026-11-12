@@ -55,3 +55,21 @@ After setting the ID and deploying, verify pageviews and events in GA4 Realtime
 or DebugView (using Tag Assistant). Check home → project gate → unlock → CV →
 contact, language changes, and browser back/forward; ensure one pageview per
 navigation. Collection has not been verified until a real property is connected.
+
+## Public project presentation
+
+`portfolio-config.js` sets `projectPresentation: 'generic'` for anonymous public
+project titles, abstract CSS covers, password-gate titles, and neutral links.
+Home-page role captions also use generic descriptions in this mode. The About
+page and résumé retain the actual professional history. The unlocked case text,
+case password, original artwork, and analytics IDs are preserved.
+
+To restore the original branded cards and titles, change the setting to
+`'branded'` and deploy. There is no visitor-facing switch, URL parameter, or
+localStorage override. The pre-change snapshot is also preserved at branch
+`backup/branded-before-generic-20261111`.
+
+Old project URLs continue to open the same case, then normalize to a neutral
+URL in generic mode. This is presentation-level anonymization, not file access
+control: existing assets, standalone demo, public source and Git history remain
+publicly accessible. No access permissions are changed by this setting.
