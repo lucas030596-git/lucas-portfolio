@@ -129,14 +129,17 @@ function gate(slug){if(genericProjects||slug==='accessibility-and-privacy')retur
 function getRoute(){const hash=location.hash;if(!hash||hash==='#/')return 'home';if(!hash.startsWith('#/'))return null;const candidate=hash.slice(2).split('?')[0]||'home';return Object.hasOwn(projectIDsBySlug,candidate)?projectIDsBySlug[candidate]:candidate;}
 const cookiePanel = document.querySelector('#cookie-panel');
 let cookieOpener = null;
+let cookiePanelLanguage;
 function updateCookiePanel() {
  const consent = window.PORTFOLIO_CONSENT;
  if (!consent) return;
  cookiePanel.hidden = !cookieOpener && consent.choice() !== null;
- if (cookiePanel.hidden) { cookiePanel.innerHTML = ''; return; }
+ if (cookiePanel.hidden) { cookiePanel.innerHTML = ''; cookiePanelLanguage = undefined; return; }
+ if (cookiePanelLanguage === language) return;
+ cookiePanelLanguage = language;
  cookiePanel.innerHTML = `<h2 id="cookie-heading" tabindex="-1">${t('Cookie choices')}</h2>
  <p>${t('I use optional Google Analytics cookies to understand which pages and projects people visit. You can browse the whole site either way.')} <a href="#/privacy">${t('Cookie notice')}</a></p>
- <div class="cookie-actions"><button type="button" data-cookie="reject">${t('Reject analytics')}</button><button type="button" data-cookie="accept">${t('Allow analytics')}</button></div>`;
+ <div class="cookie-actions"><button type="button" class="button button-secondary" data-cookie="reject">${t('Reject analytics')}</button><button type="button" class="button" data-cookie="accept">${t('Allow analytics')}</button></div>`;
 }
 function closeCookiePanel() {
  const restoreFocus = cookiePanel.contains(document.activeElement);
