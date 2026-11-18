@@ -139,7 +139,7 @@ function updateCookiePanel() {
  cookiePanelLanguage = language;
  cookiePanel.innerHTML = `<h2 id="cookie-heading" tabindex="-1">${t('Cookie choices')}</h2>
  <p>${t('I use optional Google Analytics cookies to understand which pages and projects people visit. You can browse the whole site either way.')} <a href="#/privacy">${t('Cookie notice')}</a></p>
- <div class="cookie-actions"><button type="button" class="button" data-cookie="reject">${t('Reject analytics')}</button><button type="button" class="button" data-cookie="accept">${t('Allow analytics')}</button></div>`;
+ <div class="cookie-actions"><button type="button" class="button button-secondary" data-cookie="reject">${t('Reject analytics')}</button><button type="button" class="button" data-cookie="accept">${t('Allow analytics')}</button></div>`;
 }
 function closeCookiePanel() {
  const restoreFocus = cookiePanel.contains(document.activeElement);
