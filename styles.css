@@ -436,3 +436,22 @@ html[lang="es"] .hero h1,html[lang="pt-BR"] .hero h1{font-size:clamp(40px,8.4vw,
 .abstract-accessibility span{height:5px}
 .abstract-accessibility span+span{width:74%}
 .abstract-accessibility b{height:14px;margin-top:7px;background:#516c5b}
+
+.cookie-panel{position:fixed;z-index:20;inset:auto max(24px,env(safe-area-inset-right)) max(24px,env(safe-area-inset-bottom)) auto;width:min(440px,calc(100% - 48px));max-height:calc(100dvh - 48px);overflow:auto;padding:24px;background:var(--paper);border:1px solid #a8ac9c;border-radius:14px;box-shadow:0 12px 40px #20231e26}
+.cookie-panel[hidden]{display:none}
+.cookie-panel h2,.cookie-notice h2{font-size:clamp(25px,3vw,34px);line-height:1.12;letter-spacing:-.04em}
+.cookie-panel p{color:var(--muted);font-size:14px;line-height:1.5;margin-top:9px}
+.cookie-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:19px}
+.cookie-actions button{min-height:44px;padding:7px 8px;background:transparent;color:var(--ink);border:1px solid #73796c;border-radius:999px;font-size:13px;line-height:1.25}
+.cookie-actions button:hover{background:#e5e8df}
+.cookie-panel a,.cookie-notice a,.cookie-footer-link{text-decoration:underline;text-underline-offset:4px}
+.cookie-footer-link{padding:4px 0;border:0;background:none;font:inherit;color:inherit}
+.footer-links{flex-wrap:wrap;align-items:center}
+.cookie-notice{max-width:720px;padding-bottom:64px}
+.cookie-notice section{border-top:1px solid var(--line);padding:26px 0}
+.cookie-notice p,.cookie-notice .button,.cookie-notice section>a{margin-top:12px}
+.cookie-notice section>a{display:inline-block}
+.video-placeholder{height:auto;min-height:180px;aspect-ratio:auto;background:#e5e8df;border-radius:10px;padding:24px;display:grid;justify-items:center;align-content:center;gap:14px;text-align:center}
+.video-placeholder p{font-size:14px;color:var(--muted)}
+@media(max-width:540px){.cookie-panel{inset:auto 12px max(12px,env(safe-area-inset-bottom));width:auto;padding:16px}.footer-links{column-gap:14px}}
+html:has(.cookie-panel:not([hidden])){scroll-padding-bottom:min(60dvh,400px)}
