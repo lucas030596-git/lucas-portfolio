@@ -442,8 +442,7 @@ html[lang="es"] .hero h1,html[lang="pt-BR"] .hero h1{font-size:clamp(40px,8.4vw,
 .cookie-panel h2,.cookie-notice h2{font-size:clamp(25px,3vw,34px);line-height:1.12;letter-spacing:-.04em}
 .cookie-panel p{color:var(--muted);font-size:14px;line-height:1.5;margin-top:9px}
 .cookie-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:19px}
-.cookie-actions button{min-height:44px;padding:7px 8px;background:transparent;color:var(--ink);border:1px solid #73796c;border-radius:999px;font-size:13px;line-height:1.25}
-.cookie-actions button:hover{background:#e5e8df}
+.cookie-actions .button{min-height:44px;display:flex;align-items:center;justify-content:center;padding:7px 8px;font-size:13px;line-height:1.25;text-align:center}
 .cookie-panel a,.cookie-notice a,.cookie-footer-link{text-decoration:underline;text-underline-offset:4px}
 .cookie-footer-link{padding:4px 0;border:0;background:none;font:inherit;color:inherit}
 .footer-links{flex-wrap:wrap;align-items:center}
