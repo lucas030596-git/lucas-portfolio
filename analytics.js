@@ -19,7 +19,7 @@
  document.head.append(script);
 
  const projects = new Set(['goodrec', 'qos', 'b2b-plans', 'bulk-assignment']);
- const routes = new Set(['home', 'projects', 'about', 'contact', ...projects]);
+ const routes = new Set(['home', 'projects', 'about', 'contact', 'accessibility-and-privacy', ...projects]);
  let lastView = '';
  let previousLocation = document.referrer ? (() => {
   try { return new URL(document.referrer).origin; } catch { return ''; }
