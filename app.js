@@ -28,7 +28,7 @@ function genericCover(kind,featured=false){
  return `<div class="${featured?'generic-featured-art':'project-image generic-cover'} generic-${kind}" aria-hidden="true"><div class="generic-cover-grid"></div>${motifs[kind]}</div>`;
 }
 function accessibilityProjectCard(){
- return `<a class="project" href="#/accessibility-and-privacy"><div class="project-image generic-cover generic-accessibility"><img src="assets/checkout-thumbnail.webp" alt="" width="1350" height="1000" loading="lazy" decoding="async"></div><div class="project-info"><div><h3>${t('Mobile checkout compliance')}</h3><p>${t('Accessibility and privacy')}</p></div><span class="arrow" aria-hidden="true">↗</span></div></a>`;
+ return `<a class="project" href="#/accessibility-and-privacy">${genericCover('accessibility')}<div class="project-info"><div><h3>${t('Mobile checkout compliance')}</h3><p>${t('Accessibility and privacy')}</p></div><span class="arrow" aria-hidden="true">↗</span></div></a>`;
 }
 function publicProjectNote(){return genericProjects?'<p class="public-project-note">'+t("Project names and previews have been anonymized for confidentiality.")+'</p>':'';}
 function genericProjectCards(){
