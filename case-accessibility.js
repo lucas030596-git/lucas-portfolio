@@ -44,7 +44,7 @@ window.PORTFOLIO_ACCESSIBILITY_CASE = {
     {
       "label": "Reference",
       "heading": "Four checkout states, one compliance question",
-      "html": "<p>I inspected the supplied mobile checkout section in Figma. It contains a <strong>375 × 812</strong> loading frame, filled contact and billing forms, separate collapsed and expanded order summaries, and a saved-payment-methods state. I mapped those views to the evidence needed before release.</p><p>The case uses anonymized descriptions of the design. The Figma measurements are recorded in design units. Browser measurements use CSS pixels.</p>",
+      "html": "<p>I inspected the supplied mobile checkout section in Figma. It contains a <strong>375 × 812</strong> loading frame, filled contact and billing forms, separate collapsed and expanded order summaries, and a saved-payment-methods state. I mapped those views to the evidence needed before release.</p><p>These Figma exports are cropped to the checkout content. Personal and card example values are masked. The Figma measurements are recorded in design units. Browser measurements use CSS pixels.</p>",
       "steps": [
         [
           "Loading",
@@ -62,12 +62,37 @@ window.PORTFOLIO_ACCESSIBILITY_CASE = {
           "Payment",
           "Keep the commitment, authentication and outcome usable end to end."
         ]
+      ],
+      "gallery": [
+        {
+          "image": "checkout-summary-collapsed.webp",
+          "width": 660,
+          "height": 1677,
+          "alt": "Mobile checkout with a collapsed order summary, empty personal details fields and inactive payment buttons.",
+          "caption": "Collapsed summary · The product and amount remain visible as the buyer starts the form."
+        },
+        {
+          "image": "checkout-summary-expanded.webp",
+          "width": 660,
+          "height": 1932,
+          "alt": "Mobile checkout with an expanded order summary, itemized total, masked form values and available payment buttons.",
+          "caption": "Expanded summary · The buyer can review the total, tax and next billing date before paying."
+        }
       ]
     },
     {
       "label": "Contrast · WCAG 1.4.3 and 1.4.11",
       "heading": "The total and the next action must stay readable",
-      "html": "<p>I reviewed three Figma states with Figwright: expanded summary, collapsed summary, and saved payment methods. I matched text and button fills from layers with adjacent solid colors from the exported frames. I calculated ratios using WCAG relative luminance and compared the unrounded results with the AA thresholds.</p>\n<h3>Text and labels · WCAG 1.4.3</h3>\n<ul><li><strong>Order total and summary title:</strong> #292B2E on #FFFFFF, <strong>14.20:1</strong>.</li><li><strong>Pay with a saved method:</strong> #FFFFFF on #292B2E, <strong>14.20:1</strong>.</li><li><strong>Pay another way, active:</strong> #292B2E on #48EC86, <strong>9.21:1</strong>.</li><li><strong>Email placeholder:</strong> #56575A on #FFFFFF, <strong>7.22:1</strong>.</li><li><strong>Security code hint:</strong> #292B2E on #F8F8FB, <strong>13.39:1</strong>.</li></ul>\n<p>All five text combinations clear the <strong>4.5:1</strong> minimum for normal text. The alternative <strong>3:1</strong> minimum applies to large text.</p>\n<h3>Control boundaries and selected state · WCAG 1.4.11</h3>\n<ul><li><strong>Summary chevron:</strong> #292B2E on #F8F8FB reaches <strong>13.39:1</strong>.</li><li><strong>Email input border:</strong> #CCD0D7 on #FFFFFF reaches <strong>1.55:1</strong>. The outline is the visible field boundary in this state.</li><li><strong>Security code input border:</strong> #CCD0D7 on the adjacent #F8F8FB panel reaches <strong>1.46:1</strong>. Its white interior provides too little separation from the panel to compensate.</li><li><strong>Selected email-offers checkbox:</strong> the white checkmark on #36B37E reaches <strong>2.66:1</strong>. The mark communicates the selected state.</li></ul>\n<p><strong>Proposed fix:</strong> use #858A93 for field outlines, which reaches 3.47:1 on white and 3.27:1 on the pale panel. Darken the selected checkbox fill to #23835B to reach 4.70:1 with the white mark. Then verify active, error and focus states against their rendered backgrounds.</p>\n<p>The audit covers the listed Figma pairs. A validation error was not present in the sampled states. Error styling and the implemented checkout still need testing.</p>\n<p><a href=\"https://www.w3.org/TR/WCAG22/#contrast-minimum\">WCAG 1.4.3</a> · <a href=\"https://www.w3.org/TR/WCAG22/#non-text-contrast\">WCAG 1.4.11</a></p>"
+      "html": "<p>I reviewed three Figma states with Figwright: expanded summary, collapsed summary, and saved payment methods. I matched text and button fills from layers with adjacent solid colors from the exported frames. I calculated ratios using WCAG relative luminance and compared the unrounded results with the AA thresholds.</p>\n<h3>Text and labels · WCAG 1.4.3</h3>\n<ul><li><strong>Order total and summary title:</strong> #292B2E on #FFFFFF, <strong>14.20:1</strong>.</li><li><strong>Pay with a saved method:</strong> #FFFFFF on #292B2E, <strong>14.20:1</strong>.</li><li><strong>Pay another way, active:</strong> #292B2E on #48EC86, <strong>9.21:1</strong>.</li><li><strong>Email placeholder:</strong> #56575A on #FFFFFF, <strong>7.22:1</strong>.</li><li><strong>Security code hint:</strong> #292B2E on #F8F8FB, <strong>13.39:1</strong>.</li></ul>\n<p>All five text combinations clear the <strong>4.5:1</strong> minimum for normal text. The alternative <strong>3:1</strong> minimum applies to large text.</p>\n<h3>Control boundaries and selected state · WCAG 1.4.11</h3>\n<ul><li><strong>Summary chevron:</strong> #292B2E on #F8F8FB reaches <strong>13.39:1</strong>.</li><li><strong>Email input border:</strong> #CCD0D7 on #FFFFFF reaches <strong>1.55:1</strong>. The outline is the visible field boundary in this state.</li><li><strong>Security code input border:</strong> #CCD0D7 on the adjacent #F8F8FB panel reaches <strong>1.46:1</strong>. Its white interior provides too little separation from the panel to compensate.</li><li><strong>Selected email-offers checkbox:</strong> the white checkmark on #36B37E reaches <strong>2.66:1</strong>. The mark communicates the selected state.</li></ul>\n<p><strong>Proposed fix:</strong> use #858A93 for field outlines, which reaches 3.47:1 on white and 3.27:1 on the pale panel. Darken the selected checkbox fill to #23835B to reach 4.70:1 with the white mark. Then verify active, error and focus states against their rendered backgrounds.</p>\n<p>The audit covers the listed Figma pairs. A validation error was not present in the sampled states. Error styling and the implemented checkout still need testing.</p>\n<p><a href=\"https://www.w3.org/TR/WCAG22/#contrast-minimum\">WCAG 1.4.3</a> · <a href=\"https://www.w3.org/TR/WCAG22/#non-text-contrast\">WCAG 1.4.11</a></p>",
+      "gallery": [
+        {
+          "image": "checkout-saved-payment.webp",
+          "width": 660,
+          "height": 1042,
+          "alt": "Saved-payment screen with masked card details, a security-code field with a pale outline and a dark Pay button.",
+          "caption": "Saved payment method · The Pay label reaches 14.20:1. The security-code field outline reaches 1.46:1 against the pale panel."
+        }
+      ]
     },
     {
       "label": "Touch targets · WCAG 2.5.8",
