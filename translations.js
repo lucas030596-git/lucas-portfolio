@@ -85,7 +85,7 @@ window.PORTFOLIO_TRANSLATIONS = {
   "Thoughtful design.": ["Diseño con intención.","Design com intenção."],
   "For the way": ["Para ayudar a","Para ajudar as"],
   "people move forward.": ["las personas a avanzar.","pessoas a avançar."],
-  "I’m Lucas. I turn tangled product journeys into clear next steps — across mobile experiences and B2B tools.": ["Soy Lucas. Transformo recorridos complejos en pasos claros, tanto en experiencias móviles como en herramientas B2B.","Sou Lucas. Transformo jornadas complexas em próximos passos claros, de experiências mobile a ferramentas B2B."],
+  "Product Designer with 7 years of experience in design. I work on mobile products and B2B tools.": ["Product Designer con 7 años de experiencia en diseño. Trabajo en productos móviles y herramientas B2B.","Product Designer com 7 anos de experiência em design. Trabalho com produtos mobile e ferramentas B2B."],
   "Product Designer at Holafly": ["Diseñador de producto en Holafly","Designer de produto na Holafly"],
   "Freelance design for GoodRec": ["Diseñador freelance para GoodRec","Designer freelancer para a GoodRec"],
   "Selected work": ["Proyectos seleccionados","Projetos selecionados"],
