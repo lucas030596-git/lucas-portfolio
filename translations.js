@@ -3,7 +3,7 @@
 // Each entry contains Spanish and Brazilian Portuguese, in that order.
 window.PORTFOLIO_TRANSLATIONS = {
   "Mobile checkout compliance": ["Cumplimiento en checkout móvil","Conformidade no checkout móvel"],
-  "Accessibility and privacy before launch": ["Accesibilidad y privacidad antes del lanzamiento","Acessibilidade e privacidade antes do lançamento"],
+  "Accessibility and privacy": ["Accesibilidad y privacidad","Acessibilidade e privacidade"],
   "Different kinds of complexity.": ["Distintos tipos de complejidad.","Diferentes tipos de complexidade."],
   "01 — 05 / Selected work": ["01 — 05 / Proyectos seleccionados","01 — 05 / Trabalhos selecionados"],
   "Contact Lucas": ["Contactar a Lucas","Entrar em contato com Lucas"],
