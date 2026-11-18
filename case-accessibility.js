@@ -2,25 +2,25 @@
 window.PORTFOLIO_ACCESSIBILITY_CASE = {
   "eyebrow": "05 / Mobile checkout",
   "title": "Designing a checkout people can trust",
-  "responsibilities": "Product Designer · Mobile checkout",
+  "responsibilities": "Product Designer · Mobile web",
   "product": "Consumer e-commerce checkout",
   "platforms": "Mobile web",
-  "status": "Launched · Post-launch design follow-up",
+  "status": "Launched",
   "intro": [
-    "On the mobile checkout project, I focused on one question: can someone tell what they’re paying, why we’re asking for their information, and what happens when they tap Pay?",
-    "The checkout launched. I used the accessibility review to prioritize a follow-up design iteration for field contrast, selected states, and recovery when the buyer hits an error."
+    "When I’m buying something on my phone, I often scroll back up to double-check what I’m about to pay. I wanted the checkout to make that easy, even halfway through the form.",
+    "That idea shaped the summary, the payment options, and the screens I designed after launch for moments when someone needs a second try."
   ],
   "overview": [
     [
-      "The flow",
+      "Order summary",
       0
     ],
     [
-      "Form and recovery",
+      "Error recovery",
       1
     ],
     [
-      "Privacy",
+      "Data and consent",
       2
     ],
     [
@@ -28,87 +28,87 @@ window.PORTFOLIO_ACCESSIBILITY_CASE = {
       3
     ],
     [
-      "Touch targets",
+      "Touch",
       4
     ],
     [
-      "Payment and EAA",
+      "Payment",
       5
     ],
     [
-      "What I learned",
+      "Looking back",
       6
     ]
   ],
   "sections": [
     {
-      "label": "The challenge",
-      "heading": "Keep the purchase in view while people fill in the form",
-      "html": "<p>On mobile, the order details and the form compete for space. Keeping the full breakdown open would push the form down. Hiding the order completely would make the buyer leave their place to check the price.</p><p>I kept the product and amount visible in the collapsed summary. The expanded state makes room for the total, taxes and the next billing date. That gives someone enough context to continue and a clear place to check the charge before confirming.</p><p>The same view uses a loading skeleton. The structure stays recognizable as the order loads. The screenshots below are cropped Figma exports with example values masked.</p>",
+      "label": "The order summary",
+      "heading": "Keep the price within reach",
+      "html": "<p>I gave the order summary two states. Closed, it shows the product and the amount and leaves room for the form. Open, it shows the breakdown, including taxes and the next billing date. Buyers can check those details and get straight back to what they were doing.</p><p>The loading screen keeps the same structure so the page feels familiar when the order details arrive.</p>",
       "gallery": [
         {
           "image": "checkout-summary-collapsed.webp",
           "width": 660,
           "height": 1677,
           "alt": "Mobile checkout with a collapsed order summary, empty personal details fields and inactive payment buttons.",
-          "caption": "Collapsed summary · The product and amount remain visible as the buyer starts the form."
+          "caption": "With the summary closed, the product and price stay in view."
         },
         {
           "image": "checkout-summary-expanded.webp",
           "width": 660,
           "height": 1932,
           "alt": "Mobile checkout with an expanded order summary, itemized total, masked form values and available payment buttons.",
-          "caption": "Expanded summary · The buyer can review the total, tax and next billing date before paying."
+          "caption": "Opening the summary reveals the tax breakdown and the next billing date."
         }
       ]
     },
     {
-      "label": "Form and recovery",
-      "heading": "Give buyers a way back before they pay",
-      "html": "<p>I grouped personal details together, kept the order summary within the flow, and gave returning buyers a separate path for saved payment methods. That brings attention back to the information needed for the chosen payment path, such as the security code.</p><p>For handoff, I specified what happens when the flow breaks: identify the field and the correction in text, keep valid entries when someone edits their details, and communicate the result of a payment attempt. The summary should work with a keyboard and expose whether it is expanded. Showing the final total and letting the buyer review and correct the order before committing is the route I chose for financial error prevention.</p><p>In the follow-up Figma file, I designed three error states: mismatched emails, an incomplete security code, and a declined payment. The first two put the correction next to the field. The decline keeps the order total in view and offers retry or a different payment method.</p><p><a href=\"https://www.w3.org/TR/WCAG22/#error-prevention-legal-financial-data\">WCAG 3.3.4 · Financial error prevention</a> · <a href=\"https://www.w3.org/TR/WCAG22/#status-messages\">WCAG 4.1.3 · Status messages</a></p>",
+      "label": "When something goes wrong",
+      "heading": "Give people a clear way to try again",
+      "html": "<p>After launch, I worked through three moments that can interrupt a purchase. If the emails don’t match, the message sits under the confirmation field so the buyer knows which address to change. If the security code is incomplete, the message says how many digits to enter and where to find them.</p><p>A declined payment needs a different response. I kept the order total visible and gave buyers two clear options: try again or choose another payment method. The recovery path starts from the order they’ve already entered.</p>",
       "gallery": [
         {
           "image": "checkout-error-states.webp",
           "width": 1296,
           "height": 940,
           "alt": "Three mobile checkout error states for mismatched emails, an incomplete security code, and a declined payment with retry and alternative payment actions.",
-          "caption": "Post-launch follow-up in Figma · Inline guidance for form errors and a clear recovery path after a declined payment."
+          "caption": "Three states I designed in Figma after launch: mismatched emails, an incomplete security code, and a declined payment."
         }
       ]
     },
     {
-      "label": "Privacy choices",
-      "heading": "Ask for data at the point it becomes relevant",
-      "html": "<p>I separated the information needed to complete the purchase from the invitation to receive offers. The personal details and saved-payment screens show where that choice matters: the buyer should be able to tell why a detail is requested and continue without agreeing to marketing.</p><p>The reviewed Figma state shows the offers checkbox selected. For implementation, my handoff calls for an unchecked default if consent is the basis for marketing, with purchase available either way. I also mapped each field to a question for the privacy review: what is it used for, is it necessary, and who receives it? The form can show where those questions arise. The privacy notice, provider setup, retention and tracking behavior need separate verification.</p><p><a href=\"https://eur-lex.europa.eu/eli/reg/2016/679/oj\">GDPR Articles 5, 6, 7, 13 and 25</a></p>"
+      "label": "Data and consent",
+      "heading": "Make the choice about offers easy to understand",
+      "html": "<p>The details needed to place an order sit together. I kept the invitation to receive offers separate because it’s a different decision. In the follow-up design, the opt-in starts unchecked and the buyer can continue either way.</p><p>For the handoff, I used the GDPR’s data-minimization and privacy-by-default principles to frame the review of which fields we ask for and why. <a href=\"https://eur-lex.europa.eu/eli/reg/2016/679/oj\">GDPR · Articles 5 and 25</a></p>"
     },
     {
-      "label": "Design validation",
-      "heading": "The price was readable. The form boundaries needed work.",
-      "html": "<p>I checked three Figma states after laying out the flow. I wanted to know whether someone could read the price, recognize where to enter information, and tell whether an optional choice was selected. I compared foreground and adjacent background colors using WCAG relative luminance.</p>\n<h3>Text and labels · WCAG 1.4.3</h3>\n<ul><li><strong>Order total and summary title:</strong> #292B2E on #FFFFFF, <strong>14.20:1</strong>.</li><li><strong>Pay with a saved method:</strong> #FFFFFF on #292B2E, <strong>14.20:1</strong>.</li><li><strong>Pay another way, active:</strong> #292B2E on #48EC86, <strong>9.21:1</strong>.</li><li><strong>Email placeholder:</strong> #56575A on #FFFFFF, <strong>7.22:1</strong>.</li><li><strong>Security code hint:</strong> #292B2E on #F8F8FB, <strong>13.39:1</strong>.</li></ul>\n<p>All five text combinations clear the <strong>4.5:1</strong> minimum for normal text. The alternative <strong>3:1</strong> minimum applies to large text.</p>\n<h3>Control boundaries and selected state · WCAG 1.4.11</h3>\n<ul><li><strong>Summary chevron:</strong> #292B2E on #F8F8FB reaches <strong>13.39:1</strong>.</li><li><strong>Email input border:</strong> #CCD0D7 on #FFFFFF reaches <strong>1.55:1</strong>. The outline is the visible field boundary in this state.</li><li><strong>Security code input border:</strong> #CCD0D7 on the adjacent #F8F8FB panel reaches <strong>1.46:1</strong>. Its white interior provides too little separation from the panel to compensate.</li><li><strong>Selected email-offers checkbox:</strong> the white checkmark on #36B37E reaches <strong>2.66:1</strong>. The mark communicates the selected state.</li></ul>\n<p><strong>What I changed in Figma:</strong> I set the field outlines to #858A93, which reaches 3.47:1 on white and 3.27:1 on the pale panel. I darkened the selected checkbox fill to #23835B, which reaches 4.70:1 with the white mark. The original checkout captures show the audited baseline. The follow-up states show the design changes; the rendered implementation still needs verification.</p>\n<p>The audit covers the listed Figma pairs. I did not find an error state in the sample, so validation messages, focus and the checkout in the browser are part of the next test.</p>\n<p><a href=\"https://www.w3.org/TR/WCAG22/#contrast-minimum\">WCAG 1.4.3</a> · <a href=\"https://www.w3.org/TR/WCAG22/#non-text-contrast\">WCAG 1.4.11</a></p>",
+      "label": "Visual decisions",
+      "heading": "Make it easy to see where to act",
+      "html": "<p>The saved-card screen is a good example. The amount and the Pay button lead the eye, and the security-code field gives the buyer one clear place to act. I used WCAG contrast targets to guide the field outline, the checkbox and the button label.</p><p>In Figma, I gave the fields a darker outline and kept a white mark on a deeper green for the selected checkbox. The updated outline reaches <strong>3.47:1</strong> on white and <strong>3.27:1</strong> on the pale panel. The selected mark reaches <strong>4.70:1</strong>. The Pay label in the saved-card design measures <strong>14.20:1</strong>.</p><p><a href=\"https://www.w3.org/TR/WCAG22/#contrast-minimum\">WCAG 1.4.3 · Text contrast</a> · <a href=\"https://www.w3.org/TR/WCAG22/#non-text-contrast\">WCAG 1.4.11 · Control contrast</a></p>",
       "gallery": [
         {
           "image": "checkout-saved-payment.webp",
           "width": 660,
           "height": 1042,
-          "alt": "Saved-payment screen with masked card details, a security-code field with a pale outline and a dark Pay button.",
-          "caption": "Saved payment method · The Pay label reaches 14.20:1. The security-code field outline reaches 1.46:1 against the pale panel."
+          "alt": "Saved-payment screen with masked card details, a security-code field and a dark Pay button.",
+          "caption": "The saved-card screen keeps the security code and the amount close to the payment action."
         }
       ]
     },
     {
-      "label": "Touch targets",
-      "heading": "Give the small controls room to work",
-      "html": "<p>The chevron and edit actions matter just as much as the payment button. A buyer who misses the chevron can lose the chance to review the order. I specified a 44 × 44 CSS px interaction area for compact controls in the handoff, while keeping their visual icons small. WCAG 2.2 AA calls for at least 24 × 24 CSS px or an applicable exception, including sufficient spacing.</p><p>The visible Pay component measures <strong>295 × 48 design units</strong> in Figma. I would verify the implementation by measuring the actual clickable region for Pay, the summary toggle and Edit, then using each with touch and a keyboard.</p><p><a href=\"https://www.w3.org/TR/WCAG22/#target-size-minimum\">WCAG 2.5.8 · Minimum target size</a></p>"
+      "label": "Designing for touch",
+      "heading": "Leave room around the little things",
+      "html": "<p>The summary chevron is small, but it opens the details someone may want to see right before paying. I aimed for a <strong>44 × 44 CSS px</strong> tap area around compact controls like that one and Edit. The icons can stay small while the actions are easier to reach.</p><p>WCAG 2.2 AA sets a <strong>24 × 24 CSS px</strong> minimum for pointer targets, with exceptions such as sufficient spacing. The handoff calls for checking the interactive area in the browser. <a href=\"https://www.w3.org/TR/WCAG22/#target-size-minimum\">WCAG 2.5.8 · Target size</a></p>"
     },
     {
-      "label": "Payment and EAA",
-      "heading": "Follow the handoff all the way through payment",
-      "html": "<p>I included the saved-card state and a route to other payment methods because some of the hardest steps happen outside the main form. The design review carries through the handoff: verify that buyers can identify the amount, complete authentication, understand a failure and return to try again.</p><p>For a covered EU consumer e-commerce service, the EAA requires accessible service websites and accessible identification, security and payment functions. I used WCAG 2.2 to turn that goal into testable checks for the interface. The EAA scope, national implementation and payment provider still need review for the deployed service.</p><p><a href=\"https://eur-lex.europa.eu/eli/dir/2019/882/oj\">European Accessibility Act · Article 2 and Annex I</a></p>"
+      "label": "Payment handoff",
+      "heading": "Carry that clarity through payment",
+      "html": "<p>Choosing another payment method or completing authentication can take someone out of the main checkout. I included those transitions in the handoff, along with what the buyer sees when they return or need to try again.</p><p>That matters for accessibility, too. For covered EU e-commerce services, the European Accessibility Act includes identification, security and payment functions in its scope. I used that as a reason to look at the whole journey, through the provider and back. <a href=\"https://eur-lex.europa.eu/eli/dir/2019/882/oj\">EAA · Annex I</a></p>"
     },
     {
-      "label": "What I learned",
-      "heading": "The details that make the flow usable",
-      "html": "<p>I started with the price and the payment action. The contrast review showed that both were clear in the sampled states, while the boundaries of the fields and the selected checkbox were harder to see. That changed what I would prioritize in the next iteration: stronger cues for where to act and what is selected.</p><p>The review led to stronger field boundaries and selected-state contrast in the Figma follow-up, alongside three ways to recover from errors. The next validation is to verify them in the implemented flow with keyboard, screen reader and touch, then check error states, payment return paths and the live handling of personal data.</p>"
+      "label": "Looking back",
+      "heading": "The review step is part of the purchase",
+      "html": "<p>What I took from this project is how often people need to pause and check something: the amount, an email address or the payment method they’ve selected. Giving those moments a place in the flow made my design decisions clearer, from the collapsed summary to the way back after a declined payment.</p><p>The checkout launched, and the follow-up states are in Figma. The next step is to check those designs in the browser with touch, keyboard and a screen reader, including the return from the payment provider.</p>"
     }
   ]
 };
