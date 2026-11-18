@@ -8,7 +8,7 @@ window.PORTFOLIO_ACCESSIBILITY_CASE = {
   "status": "Launched",
   "intro": [
     "When I’m buying something on my phone, I often scroll back up to double-check what I’m about to pay. I wanted the checkout to make that easy, even halfway through the form.",
-    "That idea shaped the summary, the payment options, and the screens I designed after launch for moments when someone needs a second try."
+    "That idea shaped the order summary, the details I asked for, and the way buyers move into payment."
   ],
   "overview": [
     [
@@ -16,28 +16,24 @@ window.PORTFOLIO_ACCESSIBILITY_CASE = {
       0
     ],
     [
-      "Error recovery",
+      "Data and consent",
       1
     ],
     [
-      "Data and consent",
+      "Contrast",
       2
     ],
     [
-      "Contrast",
+      "Touch",
       3
     ],
     [
-      "Touch",
+      "Payment",
       4
     ],
     [
-      "Payment",
-      5
-    ],
-    [
       "Looking back",
-      6
+      5
     ]
   ],
   "sections": [
@@ -59,20 +55,6 @@ window.PORTFOLIO_ACCESSIBILITY_CASE = {
           "height": 1932,
           "alt": "Mobile checkout with an expanded order summary, itemized total, masked form values and available payment buttons.",
           "caption": "Opening the summary reveals the tax breakdown and the next billing date."
-        }
-      ]
-    },
-    {
-      "label": "When something goes wrong",
-      "heading": "Give people a clear way to try again",
-      "html": "<p>After launch, I worked through three moments that can interrupt a purchase. If the emails don’t match, the message sits under the confirmation field so the buyer knows which address to change. If the security code is incomplete, the message says how many digits to enter and where to find them.</p><p>A declined payment needs a different response. I kept the order total visible and gave buyers two clear options: try again or choose another payment method. The recovery path starts from the order they’ve already entered.</p>",
-      "gallery": [
-        {
-          "image": "checkout-error-states.webp",
-          "width": 1296,
-          "height": 940,
-          "alt": "Three mobile checkout error states for mismatched emails, an incomplete security code, and a declined payment with retry and alternative payment actions.",
-          "caption": "Three states I designed in Figma after launch: mismatched emails, an incomplete security code, and a declined payment."
         }
       ]
     },
@@ -103,12 +85,12 @@ window.PORTFOLIO_ACCESSIBILITY_CASE = {
     {
       "label": "Payment handoff",
       "heading": "Carry that clarity through payment",
-      "html": "<p>Choosing another payment method or completing authentication can take someone out of the main checkout. I included those transitions in the handoff, along with what the buyer sees when they return or need to try again.</p><p>That matters for accessibility, too. For covered EU e-commerce services, the European Accessibility Act includes identification, security and payment functions in its scope. I used that as a reason to look at the whole journey, through the provider and back. <a href=\"https://eur-lex.europa.eu/eli/dir/2019/882/oj\">EAA · Annex I</a></p>"
+      "html": "<p>Choosing another payment method or completing authentication can take someone out of the main checkout. I included those transitions in the handoff, including how the buyer returns to the checkout.</p><p>That matters for accessibility, too. For covered EU e-commerce services, the European Accessibility Act includes identification, security and payment functions in its scope. I used that as a reason to look at the whole journey, through the provider and back. <a href=\"https://eur-lex.europa.eu/eli/dir/2019/882/oj\">EAA · Annex I</a></p>"
     },
     {
       "label": "Looking back",
       "heading": "The review step is part of the purchase",
-      "html": "<p>What I took from this project is how often people need to pause and check something: the amount, an email address or the payment method they’ve selected. Giving those moments a place in the flow made my design decisions clearer, from the collapsed summary to the way back after a declined payment.</p><p>The checkout launched, and the follow-up states are in Figma. The next step is to check those designs in the browser with touch, keyboard and a screen reader, including the return from the payment provider.</p>"
+      "html": "<p>What I took from this project is how often people pause to double-check something: the total, the information they entered, or the card they want to use. Making it easy to check those details helped me decide what to keep visible, from the summary to the final payment button.</p>"
     }
   ]
 };
